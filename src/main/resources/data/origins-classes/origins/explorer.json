@@ -1,0 +1,9 @@
+{
+  "powers": [
+    "origins-classes:explorer_kit",
+    "origins-classes:no_sprint_exhaustion"
+  ],
+  "icon": "minecraft:compass",
+  "order": 9,
+  "impact": 0
+}

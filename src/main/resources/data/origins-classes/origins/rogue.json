@@ -1,0 +1,10 @@
+{
+  "powers": [
+    "origins-classes:sneaky",
+    "origins-classes:stealth",
+    "origins-classes:stealth_descriptor"
+  ],
+  "icon": "minecraft:leather_helmet",
+  "order": 12,
+  "impact": 0
+}

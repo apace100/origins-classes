@@ -1,9 +1,21 @@
-# Fabric Example Mod
+# Origins: Classes
 
-## Setup
+This mod is an add-on to the Origins mod. In addition to choosing an origin, you now also choose a class.
+Classes available are the following:
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+* Archer
+* Beastmaster
+* Blacksmith
+* Cleric
+* Cook
+* Explorer
+* Farmer
+* Lumberjack
+* Merchant
+* Miner
+* Nitwit
+* Rancher
+* Rogue
+* Warrior
 
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+For more information and a download link, visit the CurseForge page.

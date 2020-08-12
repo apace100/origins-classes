@@ -1,0 +1,9 @@
+{
+  "powers": [
+    "origins-classes:twin_breeding",
+    "origins-classes:more_animal_loot"
+  ],
+  "icon": "minecraft:lead",
+  "order": 2,
+  "impact": 0
+}

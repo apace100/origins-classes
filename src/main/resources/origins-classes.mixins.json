@@ -1,0 +1,48 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "io.github.apace100.originsclasses.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ProjectileEntityMixin",
+    "TameableEntityMixin",
+    "AbstractFurnaceBlockEntityMixin",
+    "CraftingScreenHandlerMixin",
+    "AbstractTraderEntityMixin",
+    "WanderingTraderEntityMixin",
+    "VillagerEntityMixin",
+    "HungerManagerMixin",
+    "DontOverwriteAttrModsMixin",
+    "MiningToolItemMixin",
+    "PickaxeItemMixin",
+    "AxeItemMixin",
+    "RepairItemRecipeMixin",
+    "CraftingScreenHandlerAccessor",
+    "CraftingInventoryAccessor",
+    "PlayerScreenHandlerAccessor",
+    "AnvilScreenHandlerMixin",
+    "PotionItemMixin",
+    "PlayerEntityMixin",
+    "ServerWorldMixin",
+    "EnchantmentHelperMixin",
+    "EnchantmentScreenHandlerMixin",
+    "CauldronBlockMixin",
+    "BoneMealItemMixin",
+    "LivingEntityMixin",
+    "BreedTaskMixin",
+    "BlockMixin",
+    "AnimalMateGoalMixin",
+    "ServerPlayerInteractionManagerMixin",
+    "AbstractBlockMixin"
+  ],
+  "client": [
+    "ClientPlayerEntityMixin",
+    "ItemMixin",
+    "SimpleTraderMixin",
+    "WorldRendererMixin",
+    "EntityRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

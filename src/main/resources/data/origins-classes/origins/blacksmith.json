@@ -1,0 +1,9 @@
+{
+  "powers": [
+    "origins-classes:quality_equipment",
+    "origins-classes:efficient_repairs"
+  ],
+  "icon": "minecraft:iron_ingot",
+  "order": 6,
+  "impact": 0
+}

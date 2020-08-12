@@ -1,0 +1,9 @@
+{
+  "powers": [
+    "origins-classes:tree_felling",
+    "origins-classes:more_planks_from_logs"
+  ],
+  "icon": "minecraft:iron_axe",
+  "order": 4,
+  "impact": 0
+}

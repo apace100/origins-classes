@@ -22,7 +22,7 @@
   "origin.origins-classes.blacksmith.description": "铁匠朋友谁不爱呢？铁匠们总能锻造更好的武器，工具和盔甲。",
 
   "origin.origins-classes.cleric.name": "牧师",
-  "origin.origins-classes.cleric.description": "牧师们明白怎么样将世界的魔法融会贯通并为己所用。",
+  "origin.origins-classes.cleric.description": "牧师们明白怎么将世界的魔法融会贯通并为己所用。",
 
   "origin.origins-classes.cook.name": "厨师",
   "origin.origins-classes.cook.description": "还有谁比厨师更会烹饪呢？",
@@ -82,7 +82,7 @@
   "power.origins-classes.better_crafted_food.description": "你所制作的食品提供的饱食度更多。",
 
   "power.origins-classes.longer_potions.name": "长效药水",
-  "power.origins-classes.longer_potions.description": "作为炼药的最后一道工序，使用加炼药锅中的水可以加长药物的药效。",
+  "power.origins-classes.longer_potions.description": "作为炼药的最后一道工序，使用炼药锅中的水可以加长药物的药效。",
 
   "power.origins-classes.better_enchanting.name": "附魔大师",
   "power.origins-classes.better_enchanting.description": "附魔台可以给予你更好的附魔。",

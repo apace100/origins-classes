@@ -20,9 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class ClassPowerTypes {
 
@@ -97,23 +95,32 @@ public class ClassPowerTypes {
 
     // Lumberjack
     public static final PowerType<MultiMinePower> TREE_FELLING = new PowerType<>((type, player) -> (MultiMinePower)new MultiMinePower(type, player, (pl, bs, bp) -> {
-        List<BlockPos> affected = new LinkedList<>();
+        Set<BlockPos> affected = new HashSet<>();
         Queue<BlockPos> queue = new LinkedList<>();
         queue.add(bp);
         boolean foundOneWithLeaves = false;
+        BlockPos.Mutable pos = bp.mutableCopy();
+        BlockPos.Mutable newPos = bp.mutableCopy();
         while(!queue.isEmpty()) {
-            BlockPos pos = queue.remove();
+            pos.set(queue.remove());
             for(int dx = -1; dx <= 1; dx++) {
                 for(int dy = 0; dy <= 1; dy++) {
                     for(int dz = -1; dz <= 1; dz++) {
                         if(dx == 0 & dy == 0 && dz == 0) {
                             continue;
                         }
-                        BlockPos newPos = pos.add(dx, dy, dz);
+                        newPos.set(pos.getX() + dx, pos.getY() + dy, pos.getZ() + dz);
                         BlockState state = pl.world.getBlockState(newPos);
                         if(state.isOf(bs.getBlock()) && !affected.contains(newPos)) {
-                            affected.add(newPos);
-                            queue.add(newPos);
+                            BlockPos savedNewPos = newPos.toImmutable();
+                            affected.add(savedNewPos);
+                            queue.add(savedNewPos);
+                            if(affected.size() > 127) {
+                                if(!foundOneWithLeaves) {
+                                    return new ArrayList<>();
+                                }
+                                return new ArrayList<>(affected);
+                            }
                         } else
                         if(state.getBlock() instanceof LeavesBlock && !state.get(LeavesBlock.PERSISTENT)) {
                             foundOneWithLeaves = true;
@@ -125,7 +132,7 @@ public class ClassPowerTypes {
         if(!foundOneWithLeaves) {
             affected.clear();
         }
-        return affected;
+        return new ArrayList<>(affected);
     }, state -> state.getBlock().isIn(BlockTags.LOGS)).addCondition(p -> p.getMainHandStack().getItem() instanceof AxeItem));
     public static final PowerType<Power> MORE_PLANKS_FROM_LOGS = new PowerType<>(Power::new);
 

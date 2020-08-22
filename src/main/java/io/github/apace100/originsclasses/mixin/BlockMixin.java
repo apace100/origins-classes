@@ -8,9 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
@@ -29,10 +27,11 @@ public class BlockMixin {
         }
     }
 
-    @Redirect(method = "afterBreak", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;addExhaustion(F)V"))
-    private void preventBlockMiningExhaustion(PlayerEntity playerEntity, float exhaustion) {
-        if(!ClassPowerTypes.NO_MINING_EXHAUSTION.isActive(playerEntity)) {
-            playerEntity.addExhaustion(exhaustion);
+    @ModifyConstant(method = "afterBreak", constant = @Constant(floatValue = 0.005F))
+    private float preventBlockMiningExhaustion(float exhaustion, World world, PlayerEntity playerEntity) {
+        if(ClassPowerTypes.NO_MINING_EXHAUSTION.isActive(playerEntity)) {
+            return 0F;
         }
+        return exhaustion;
     }
 }

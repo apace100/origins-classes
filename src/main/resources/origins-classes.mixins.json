@@ -29,7 +29,6 @@
     "CauldronBlockMixin",
     "BoneMealItemMixin",
     "LivingEntityMixin",
-    "BreedTaskMixin",
     "BlockMixin",
     "AnimalMateGoalMixin",
     "ServerPlayerInteractionManagerMixin",

@@ -23,14 +23,14 @@ public class PotionItemMixin {
     @Inject(method = "finishUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;)Z"), locals = LocalCapture.CAPTURE_FAILHARD)
     private void diffusePotionToTamedsDuration(ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir, PlayerEntity playerEntity, List<StatusEffectInstance> list, Iterator var6, StatusEffectInstance statusEffectInstance) {
         if(ClassPowerTypes.TAMED_POTION_DIFFUSAL.isActive(playerEntity)) {
-            world.getEntitiesByClass(TameableEntity.class, playerEntity.getBoundingBox().stretch(8F, 2F, 8F).stretch(-8f, -2F, -8F), e -> e.getOwner() == playerEntity).forEach(e -> e.addStatusEffect(new StatusEffectInstance(statusEffectInstance)));
+            world.getEntities(TameableEntity.class, playerEntity.getBoundingBox().stretch(8F, 2F, 8F).stretch(-8f, -2F, -8F), e -> e.getOwner() == playerEntity).forEach(e -> e.addStatusEffect(new StatusEffectInstance(statusEffectInstance)));
         }
     }
 
     @Inject(method = "finishUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/effect/StatusEffect;applyInstantEffect(Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/LivingEntity;ID)V"), locals = LocalCapture.CAPTURE_FAILHARD)
     private void diffusePotionToTamedsInstant(ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir, PlayerEntity playerEntity, List<StatusEffectInstance> list, Iterator var6, StatusEffectInstance statusEffectInstance) {
         if(ClassPowerTypes.TAMED_POTION_DIFFUSAL.isActive(playerEntity)) {
-            world.getEntitiesByClass(TameableEntity.class, playerEntity.getBoundingBox().stretch(8F, 2F, 8F).stretch(-8f, -2F, -8F), e -> e.getOwner() == playerEntity).forEach(e -> {
+            world.getEntities(TameableEntity.class, playerEntity.getBoundingBox().stretch(8F, 2F, 8F).stretch(-8f, -2F, -8F), e -> e.getOwner() == playerEntity).forEach(e -> {
                 statusEffectInstance.getEffectType().applyInstantEffect(playerEntity, playerEntity, e, statusEffectInstance.getAmplifier(), 1.0D);
             });
         }

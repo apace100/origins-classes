@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Warrior attack damage bonus",
+    "attribute": "minecraft:generic.attack_damage",
+    "value": 1,
+    "operation": "addition"
+  }
+}

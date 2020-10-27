@@ -1,6 +1,8 @@
 package io.github.apace100.originsclasses.mixin;
 
+import io.github.apace100.origins.component.OriginComponent;
 import io.github.apace100.originsclasses.power.ClassPowerTypes;
+import io.github.apace100.originsclasses.power.CraftAmountPower;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -38,10 +40,15 @@ public class CraftingScreenHandlerMixin {
         if(ClassPowerTypes.QUALITY_EQUIPMENT.isActive(player) && isEquipment(itemStack)) {
             addQualityAttribute(itemStack);
         }
-        if(ClassPowerTypes.MORE_PLANKS_FROM_LOGS.isActive(player)) {
+        /*if(ClassPowerTypes.MORE_PLANKS_FROM_LOGS.isActive(player)) {
             if(itemStack.getItem().isIn(ItemTags.PLANKS) && itemStack.getCount() == 4) {
                 itemStack.setCount(6);
             }
+        }*/
+        int baseValue = itemStack.getCount();
+        int newValue = (int) OriginComponent.modify(player, CraftAmountPower.class, baseValue, (p -> p.doesApply(itemStack)));
+        if(newValue != baseValue) {
+            itemStack.setCount(newValue < 0 ? 0 : Math.min(newValue, itemStack.getMaxCount()));
         }
     }
 

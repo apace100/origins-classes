@@ -1,0 +1,15 @@
+{
+  "type": "origins:modify_break_speed",
+  "modifier": {
+    "name": "More stone break speed",
+    "value": 0.5,
+    "operation": "multiply_base"
+  },
+  "block_condition": {
+    "type": "origins-classes:material",
+    "material": "stone"
+  },
+  "condition": {
+    "type": "origins:using_effective_tool"
+  }
+}

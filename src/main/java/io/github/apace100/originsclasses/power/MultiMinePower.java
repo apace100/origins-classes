@@ -2,7 +2,9 @@ package io.github.apace100.originsclasses.power;
 
 import io.github.apace100.origins.power.Power;
 import io.github.apace100.origins.power.PowerType;
+import io.github.apace100.origins.power.factory.condition.ConditionFactory;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.pattern.CachedBlockPosition;
 import net.minecraft.data.client.model.BlockStateVariantMap;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;

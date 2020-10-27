@@ -1,0 +1,14 @@
+{
+  "type": "origins-classes:craft_amount",
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "modifier": {
+    "name": "Lumberjack plank amount modifier",
+    "operation": "addition",
+    "value": 2
+  }
+}

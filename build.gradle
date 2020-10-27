@@ -15,6 +15,10 @@ repositories {
 		url 'https://jitpack.io'
 	}
 	maven {
+		name = "AdrianTodt's Maven"
+		url = "https://dl.bintray.com/adriantodt/maven"
+	}
+	maven {
 		url "https://maven.jamieswhiteshirt.com/libs-release/"
 	}
 }

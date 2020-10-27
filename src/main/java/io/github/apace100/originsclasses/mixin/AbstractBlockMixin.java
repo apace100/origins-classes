@@ -51,6 +51,7 @@ public class AbstractBlockMixin {
                 }
             });
         }
+        /*
         if(ClassPowerTypes.MORE_STONE_BREAK_SPEED.isActive(player)) {
             ItemStack tool = player.getEquippedStack(EquipmentSlot.MAINHAND);
             if(tool.getItem() instanceof PickaxeItem) {
@@ -58,6 +59,6 @@ public class AbstractBlockMixin {
                     cir.setReturnValue(cir.getReturnValueF() * 1.5F);
                 }
             }
-        }
+        }*/
     }
 }

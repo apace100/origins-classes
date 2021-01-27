@@ -3,7 +3,7 @@
 
   "origins-classes.food_bonus": "Сытость: +%s",
   "origins-classes.mining_speed_bonus": "Скорость добычи: %s",
-  "origins-classes.longer_potions": "Продленное",
+  "origins-classes.longer_potions": "Продлённое",
 
   "origin.origins-classes.warrior.name": "Воин",
   "origin.origins-classes.warrior.description": "Эти благородные бойцы предпочитают меч и щит, чтобы побеждать своих врагов.",
@@ -15,7 +15,7 @@
   "origin.origins-classes.rogue.description": "Обычно известные как воры и грабители. Разбойники умеют устраивать засады и скрытные атаки.",
 
   "origin.origins-classes.beastmaster.name": "Повелитель зверей",
-  "origin.origins-classes.beastmaster.description": "Повелители зверей - одинокие люди, предпочитающие компанию животных.",
+  "origin.origins-classes.beastmaster.description": "Охотник.",
 
   "origin.origins-classes.blacksmith.name": "Кузнец",
   "origin.origins-classes.blacksmith.description": "Кузнецы - ценные друзья для любого человека. Умеют создавать лучшие инструменты, оружие и доспехи.",
@@ -42,7 +42,7 @@
   "origin.origins-classes.lumberjack.description": "Деревья должны быть начеку, когда лесорубы вокруг.",
 
   "origin.origins-classes.explorer.name": "Исследователь",
-  "origin.origins-classes.explorer.description": "Исследователи легко преодолевают самые сложные участки местности и открывают скрытые достопримечательности..",
+  "origin.origins-classes.explorer.description": "Исследователи легко преодолевают самые сложные участки местности и открывают скрытые достопримечательности.",
 
   "origin.origins-classes.nitwit.name": "Придурок",
   "origin.origins-classes.nitwit.description": "Придурки ни в чем не хороши.",
@@ -60,7 +60,7 @@
   "power.origins-classes.stealth_descriptor.description": "В скрытности, вы производите меньше звуков и наносите дополнительный урон когда атакуете врага за спиною. Вы выходите из скрытности когда вы перестаёте подкрадываться или атакуете врага.",
 
   "power.origins-classes.less_bow_slowdown.name": "Ловкость",
-  "power.origins-classes.less_bow_slowdown.description": "Вы движетесь выстрее чем остальные когда натягиваете тетиву лука.",
+  "power.origins-classes.less_bow_slowdown.description": "Вы движетесь быстрее чем остальные когда натягиваете тетиву лука.",
 
   "power.origins-classes.no_projectile_divergence.name": "Точность",
   "power.origins-classes.no_projectile_divergence.description": "Все ваши снаряды имеют повышенную точность.",
@@ -72,7 +72,7 @@
   "power.origins-classes.tamed_animal_boost.description": "Прирученные тобою животные получают постоянный эффект на их здоровье и силу.",
 
   "power.origins-classes.tamed_potion_diffusal.name": "Эффективное сочувствие",
-  "power.origins-classes.tamed_potion_diffusal.description": "Прирученные животные поблизости также получают эффекты зелья, когда вы пьете зелье..",
+  "power.origins-classes.tamed_potion_diffusal.description": "Прирученные животные поблизости также получают эффекты зелья, когда вы пьете зелье.",
 
   "power.origins-classes.more_smoker_xp.name": "Копчение",
   "power.origins-classes.more_smoker_xp.description": "Вы получаете больше опыта при готовке в коптильне.",
@@ -86,7 +86,7 @@
   "power.origins-classes.better_enchanting.name": "Мастер чар",
   "power.origins-classes.better_enchanting.description": "Вы можете накладывать чары получше на чародейском столе.",
 
-  "power.origins-classes.quality_equipment.name": "Высококачественное оборудование",
+  "power.origins-classes.quality_equipment.name": "Стальные нервы",
   "power.origins-classes.quality_equipment.description": "Созданное вами сняряжение будет иметь небольшое улучшение.",
 
   "power.origins-classes.efficient_repairs.name": "Эффективный ремонт",
@@ -108,13 +108,13 @@
   "power.origins-classes.trade_availability.description": "Крестьяне, с которыми вы торгуете, никогда не исчерпают ресурсы, чтобы обменять их.",
 
   "power.origins-classes.rare_wandering_loot.name": "Харизма",
-  "power.origins-classes.rare_wandering_loot.description": "Вы можете убедить странствующих торговцев предложить вам некоторые из их более редких предметов..",
+  "power.origins-classes.rare_wandering_loot.description": "Вы можете убедить странствующих торговцев предложить вам некоторые из их более редких предметов.",
 
   "power.origins-classes.no_sprint_exhaustion.name": "В форме",
   "power.origins-classes.no_sprint_exhaustion.description": "Бег не заставляет вас утомляться.",
 
   "power.origins-classes.explorer_kit.name": "Комплект Исследователя",
-  "power.origins-classes.explorer_kit.description": "Вы начинаете игру с компасом, часами и 9ью пустыми картами.",
+  "power.origins-classes.explorer_kit.description": "Вы начинаете игру с компасом, часами и девятью пустыми картами.",
 
   "power.origins-classes.no_mining_exhaustion.name": "Опытный землекоп",
   "power.origins-classes.no_mining_exhaustion.description": "Разрушение блоков не вызывает утомление.",
@@ -122,7 +122,7 @@
   "power.origins-classes.more_stone_break_speed.name": "Эксперт по горному делу",
   "power.origins-classes.more_stone_break_speed.description": "Вы добываете камень быстрее, чем другие.",
 
-  "power.origins-classes.tree_felling.name": "Древесина!!",
+  "power.origins-classes.tree_felling.name": "Древесина!",
   "power.origins-classes.tree_felling.description": "Вы рубите сразу целые деревья, если не крадетесь.",
 
   "power.origins-classes.more_planks_from_logs.name": "Резка по дереву",

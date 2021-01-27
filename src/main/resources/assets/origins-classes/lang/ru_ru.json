@@ -12,16 +12,16 @@
   "origin.origins-classes.archer.description": "Один выстрел, одно убийство.",
 
   "origin.origins-classes.rogue.name": "Разбойник",
-  "origin.origins-classes.rogue.description": "Обычно известные как воры и грабители. Разбойники умеют устраивать засады и скрытные атаки.",
+  "origin.origins-classes.rogue.description": "Обычно известные как воры и грабители. Разбойники умеют устраивать засады и атаковать скрытно.",
 
   "origin.origins-classes.beastmaster.name": "Охотник",
-  "origin.origins-classes.beastmaster.description": "Охотники - одинокие люди, предпочитающие компанию животных.",
+  "origin.origins-classes.beastmaster.description": "Охотники - одинокие люди, предпочитающие находиться в компании животных.",
 
   "origin.origins-classes.blacksmith.name": "Кузнец",
   "origin.origins-classes.blacksmith.description": "Кузнецы - ценные друзья для любого человека. Умеют создавать лучшие инструменты, оружие и доспехи.",
 
   "origin.origins-classes.cleric.name": "Клирик",
-  "origin.origins-classes.cleric.description": "Они научились направлять магию, присутствующую в мире и использовать её в своих интересах.",
+  "origin.origins-classes.cleric.description": "Они научились управлять магией, присутствующую в мире и использовать её в своих интересах.",
 
   "origin.origins-classes.cook.name": "Повар",
   "origin.origins-classes.cook.description": "Нет того, кто лучше приготовит еду, чем повар.",
@@ -33,13 +33,13 @@
   "origin.origins-classes.merchant.description": "Всегда ищут дополнительный изумруд. Торговцы - опытные барыги.",
 
   "origin.origins-classes.rancher.name": "Владелец ранчо",
-  "origin.origins-classes.rancher.description": "Используя животных по максимуму, владельцы ранчо могут собрать много полезных ресурсов.",
+  "origin.origins-classes.rancher.description": "Используя животных по максимуму, владельцы ранчо могут получать много полезных ресурсов.",
 
   "origin.origins-classes.miner.name": "Шахтёр",
   "origin.origins-classes.miner.description": "Шахтеры наиболее искусны в выкапывании земных сокровищ.",
 
   "origin.origins-classes.lumberjack.name": "Лесоруб",
-  "origin.origins-classes.lumberjack.description": "Деревья должны быть начеку, когда лесорубы вокруг.",
+  "origin.origins-classes.lumberjack.description": "Деревья должны быть начеку, когда лесорубы рядом.",
 
   "origin.origins-classes.explorer.name": "Исследователь",
   "origin.origins-classes.explorer.description": "Исследователи легко преодолевают самые сложные участки местности и открывают скрытые достопримечательности.",

@@ -1,0 +1,130 @@
+{
+  "layer.origins-classes.class": "Classe",
+
+  "origins-classes.food_bonus": "Nutrição: +%s",
+  "origins-classes.mining_speed_bonus": "Velocidade de Mineração: %s",
+  "origins-classes.longer_potions": "Estendida",
+
+  "origin.origins-classes.warrior.name": "Guerreiro",
+  "origin.origins-classes.warrior.description": "Estes honrados guerreiros favorecem a espada e o escudo ao enfrentar seus inimigos.",
+
+  "origin.origins-classes.archer.name": "Arqueiro",
+  "origin.origins-classes.archer.description": "Um tiro, uma morte.",
+
+  "origin.origins-classes.rogue.name": "Gatuno",
+  "origin.origins-classes.rogue.description": "Comumente conhecidos como ladrões e trapaceiros, Gatunos são proficientes em emboscadas e ataques sorrateiros.",
+
+  "origin.origins-classes.beastmaster.name": "Mestre das Feras",
+  "origin.origins-classes.beastmaster.description": "Mestres das Feras são pessoas solitárias que preferem a companhia de animais.",
+
+  "origin.origins-classes.blacksmith.name": "Ferreiro",
+  "origin.origins-classes.blacksmith.description": "Amigos valiosos, Ferreiros são capazes de criar ferramentas, armas e armaduras melhores.",
+
+  "origin.origins-classes.cleric.name": "Clérigo",
+  "origin.origins-classes.cleric.description": "Os Clérigos aprenderam a canalizr a magia presente no mundo e usa-la para sua vantagem.",
+
+  "origin.origins-classes.cook.name": "Cozinheiro",
+  "origin.origins-classes.cook.description": "Ninguém cozinha melhor que o Cozinheiro.",
+
+  "origin.origins-classes.farmer.name": "Fazendeiro",
+  "origin.origins-classes.farmer.description": "Fazendeiros sempre foram conhecidos como aqueles que provem todos com comida.",
+
+  "origin.origins-classes.merchant.name": "Mercante",
+  "origin.origins-classes.merchant.description": "Sempre procurando por mais esmeraldas, Mercantes são comerciantes experientes.",
+
+  "origin.origins-classes.rancher.name": "Rancheiro",
+  "origin.origins-classes.rancher.description": "Aproveitando ao máximo os animais, Rancheiros são capazes de coletar muitos recursos úteis.",
+
+  "origin.origins-classes.miner.name": "Minerador",
+  "origin.origins-classes.miner.description": "Mineradores são os mais eficientes em cavar os tesouros da terra.",
+
+  "origin.origins-classes.lumberjack.name": "Lenhador",
+  "origin.origins-classes.lumberjack.description": "Árvores deveriam se cuidar quando há um Lenhador por perto.",
+
+  "origin.origins-classes.explorer.name": "Explorador",
+  "origin.origins-classes.explorer.description": "Exploradores atravessam facilmente o mais dificil dos terrenos e descobrem marcos geográficos.",
+
+  "origin.origins-classes.nitwit.name": "Tolo",
+  "origin.origins-classes.nitwit.description": "Tolos não são muito bons em nada",
+
+  "power.origins-classes.less_shield_slowdown.name": "Empunhar Escudo",
+  "power.origins-classes.less_shield_slowdown.description": "Você fica menos lento ao empunhar um escudo.",
+
+  "power.origins-classes.sneaky.name": "Sorrateiro",
+  "power.origins-classes.sneaky.description": "Seu nome nunca estará visível através de paredes, até quando não esgueirando.",
+
+  "power.origins-classes.stealth.name": "Nas sombras",
+  "power.origins-classes.stealth.description": "Após se esgueirar por 10 segundos, você entra em furtividade.",
+
+  "power.origins-classes.stealth_descriptor.name": "Furtividade",
+  "power.origins-classes.stealth_descriptor.description": "Enquanto em modo furtivo, você faz menos som e da mais dano quando ataca alguém pelas costas. Você sai de modo furtivo ao atacar alguém ao deixar de esgueirar.",
+
+  "power.origins-classes.less_bow_slowdown.name": "Agilidade",
+  "power.origins-classes.less_bow_slowdown.description": "Você se move mais rápido que os outros com um arco esticado.",
+
+  "power.origins-classes.no_projectile_divergence.name": "Precisão",
+  "power.origins-classes.no_projectile_divergence.description": "Todos os seus projéteis tem precisão aumentada.",
+
+  "power.origins-classes.more_attack_damage.name": "Conhecimento de Armas",
+  "power.origins-classes.more_attack_damage.description": "Capaz de usar sua arma a sua máxima eficácia, você dá um pouco a mais de dano.",
+
+  "power.origins-classes.tamed_animal_boost.name": "Amigo da Fauna",
+  "power.origins-classes.tamed_animal_boost.description": "Animais que você domou recebem um bonus permanente à vida e dano.",
+
+  "power.origins-classes.tamed_potion_diffusal.name": "Empatia Efetiva",
+  "power.origins-classes.tamed_potion_diffusal.description": "Animais doados por você recebem os bonus de poção bebidas por você.",
+
+  "power.origins-classes.more_smoker_xp.name": "Churrasqueiro",
+  "power.origins-classes.more_smoker_xp.description": "Você recebe mais experiência o cozinhar em uma churrasqueira.",
+
+  "power.origins-classes.better_crafted_food.name": "Boas Refeições",
+  "power.origins-classes.better_crafted_food.description": "Comida produzida por você é mais nutritiva.",
+
+  "power.origins-classes.longer_potions.name": "Poções Estendidas",
+  "power.origins-classes.longer_potions.description": "Como o último passo na fermentação de uma poção, você pode dobrar a sua duração com água de um caldeirão.",
+
+  "power.origins-classes.better_enchanting.name": "Maestria em Encantamentos",
+  "power.origins-classes.better_enchanting.description": "Você é capaz de produzir encantamentos melhores em uma mesa de encantamentos.",
+
+  "power.origins-classes.quality_equipment.name": "Equipamento de Alta Qualidade",
+  "power.origins-classes.quality_equipment.description": "Equipmento que você cria tem pequenos bonus.",
+
+  "power.origins-classes.efficient_repairs.name": "Reparos Eficientes",
+  "power.origins-classes.efficient_repairs.description": "Reparar equipamentos em uma bigorna custa menos materiais. Reparar combinando equipamentos restaura mais durabilidade.",
+
+  "power.origins-classes.more_crop_drops.name": "Colheita Generosa",
+  "power.origins-classes.more_crop_drops.description": "Quando colhendo de sua plantação, há uma pequena chance de receber em dobro.",
+
+  "power.origins-classes.better_bone_meal.name": "Tecnicas Fertilizantes",
+  "power.origins-classes.better_bone_meal.description": "Farinha de Osso é duas vezes mais eficáz quando em suas experientes mãos, tanto em plantações quanto em plantas.",
+
+  "power.origins-classes.twin_breeding.name": "Partos Gêmeos",
+  "power.origins-classes.twin_breeding.description": "Animais cruzados por você tem chance de terem dois bebês.",
+
+  "power.origins-classes.more_animal_loot.name": "Carniceiro",
+  "power.origins-classes.more_animal_loot.description": "Você é capaz de receber o dobro de materiais de animais mortos por você.",
+
+  "power.origins-classes.trade_availability.name": "Reestoque",
+  "power.origins-classes.trade_availability.description": "Aldeões com quem você troca nunca ficam sem recursos.",
+
+  "power.origins-classes.rare_wandering_loot.name": "Carisma",
+  "power.origins-classes.rare_wandering_loot.description": "Você é capaz de convencer mercantes viajantes a lhe oferecer bens mais raros.",
+
+  "power.origins-classes.no_sprint_exhaustion.name": "Em Forma",
+  "power.origins-classes.no_sprint_exhaustion.description": "Correr não te causa exaustão.",
+
+  "power.origins-classes.explorer_kit.name": "Kit de Explorador",
+  "power.origins-classes.explorer_kit.description": "Você começa o jogo com uma bussola, um relógio e 9 mapas vazios.",
+
+  "power.origins-classes.no_mining_exhaustion.name": "Excavdor Experiente",
+  "power.origins-classes.no_mining_exhaustion.description": "Quebrar blocos não te deixa exusto.",
+
+  "power.origins-classes.more_stone_break_speed.name": "Minerador Expert",
+  "power.origins-classes.more_stone_break_speed.description": "Você cava materiais de pedra mais rápido que outros.",
+
+  "power.origins-classes.tree_felling.name": "Madeira!",
+  "power.origins-classes.tree_felling.description": "Você corta arvores inteiras de uma vez, a menos que esgueire.",
+
+  "power.origins-classes.more_planks_from_logs.name": "Corte de Lenha",
+  "power.origins-classes.more_planks_from_logs.description": "Você ganha duas tábuas de madeira a mais por tronco quando criando."
+}

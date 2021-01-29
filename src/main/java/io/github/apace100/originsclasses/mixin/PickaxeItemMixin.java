@@ -21,7 +21,7 @@ public abstract class PickaxeItemMixin extends MiningToolItem {
 
     @Redirect(method = "getMiningSpeedMultiplier", at = @At(value = "FIELD", target = "Lnet/minecraft/item/PickaxeItem;miningSpeed:F", opcode = org.objectweb.asm.Opcodes.GETFIELD, ordinal = 0))
     private float applyMiningSpeedMultiplierMultiplier(PickaxeItem item, ItemStack stack, BlockState blockState) {
-        if(stack.hasTag() && stack.getTag().contains("MiningSpeedMultiplier")) {
+        if(stack != null && stack.hasTag() && stack.getTag().contains("MiningSpeedMultiplier")) {
             return miningSpeed * stack.getTag().getFloat("MiningSpeedMultiplier");
         }
         return miningSpeed;

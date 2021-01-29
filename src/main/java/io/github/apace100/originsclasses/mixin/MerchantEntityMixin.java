@@ -1,7 +1,7 @@
 package io.github.apace100.originsclasses.mixin;
 
 import io.github.apace100.originsclasses.power.ClassPowerTypes;
-import net.minecraft.entity.passive.AbstractTraderEntity;
+import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.WanderingTraderEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -9,7 +9,7 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TraderOfferList;
+import net.minecraft.village.TradeOfferList;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,15 +19,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
-@Mixin(AbstractTraderEntity.class)
-public class AbstractTraderEntityMixin {
+@Mixin(MerchantEntity.class)
+public class MerchantEntityMixin {
 
     @Shadow
-    protected TraderOfferList offers;
+    protected TradeOfferList offers;
     @Shadow
     private PlayerEntity customer;
     private int offerCountWithoutAdditional;
-    private TraderOfferList additionalOffers;
+    private TradeOfferList additionalOffers;
 
     @Redirect(method = "trade", at = @At(value = "INVOKE", target = "Lnet/minecraft/village/TradeOffer;use()V"))
     private void dontUseUpTrades(TradeOffer tradeOffer) {
@@ -64,13 +64,13 @@ public class AbstractTraderEntityMixin {
     @Inject(method = "readCustomDataFromTag", at = @At("HEAD"))
     private void readAdditionalOffersFromTag(CompoundTag tag, CallbackInfo ci) {
         if(tag.contains("AdditionalOffers")) {
-            additionalOffers = new TraderOfferList(tag.getCompound("AdditionalOffers"));
+            additionalOffers = new TradeOfferList(tag.getCompound("AdditionalOffers"));
             offerCountWithoutAdditional = tag.getInt("OfferCountNoAdditional");
         }
     }
 
-    private static TraderOfferList buildAdditionalOffers() {
-        TraderOfferList list = new TraderOfferList();
+    private static TradeOfferList buildAdditionalOffers() {
+        TradeOfferList list = new TradeOfferList();
         Random random = new Random();
         int r = random.nextInt(9);
         switch(r) {

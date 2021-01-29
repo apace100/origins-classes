@@ -3,7 +3,7 @@ package io.github.apace100.originsclasses.mixin;
 import io.github.apace100.originsclasses.networking.ModPacketsS2C;
 import io.github.apace100.originsclasses.power.ClassPowerTypes;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.village.SimpleTrader;
+import net.minecraft.village.SimpleMerchant;
 import net.minecraft.village.TradeOffer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,8 +11,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(SimpleTrader.class)
-public class SimpleTraderMixin {
+@Mixin(SimpleMerchant.class)
+public class SimpleMerchantMixin {
 
     @Shadow @Final private PlayerEntity player;
 

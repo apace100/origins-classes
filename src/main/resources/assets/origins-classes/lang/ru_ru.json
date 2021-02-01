@@ -1,5 +1,7 @@
 {
   "layer.origins-classes.class": "Класс",
+  "layer.origins-classes.class.missing_origin.name": "Отсутствует",
+  "layer.origins-classes.class.missing_origin.description": "У вас нет класса.",
 
   "origins-classes.food_bonus": "Сытость: +%s",
   "origins-classes.mining_speed_bonus": "Скорость добычи: %s",
@@ -30,7 +32,7 @@
   "origin.origins-classes.farmer.description": "Фермеры, как известно, обеспечивают всех едой с тех пор, сколько их помнят.",
 
   "origin.origins-classes.merchant.name": "Торговец",
-  "origin.origins-classes.merchant.description": "Всегда ищут дополнительный изумруд. Торговцы - опытные барыги.",
+  "origin.origins-classes.merchant.description": "Всегда ищут дополнительный изумруд. Торговцы - опытные купцы.",
 
   "origin.origins-classes.rancher.name": "Владелец ранчо",
   "origin.origins-classes.rancher.description": "Используя животных по максимуму, владельцы ранчо могут получать много полезных ресурсов.",
@@ -60,7 +62,7 @@
   "power.origins-classes.stealth_descriptor.description": "В скрытности, вы производите меньше звуков и наносите дополнительный урон когда атакуете врага за спиною. Вы выходите из скрытности когда вы перестаёте подкрадываться или атакуете врага.",
 
   "power.origins-classes.less_bow_slowdown.name": "Ловкость",
-  "power.origins-classes.less_bow_slowdown.description": "Вы движетесь быстрее чем остальные когда натягиваете тетиву лука.",
+  "power.origins-classes.less_bow_slowdown.description": "Вы движетесь быстрее, чем остальные, когда натягиваете тетиву лука.",
 
   "power.origins-classes.no_projectile_divergence.name": "Точность",
   "power.origins-classes.no_projectile_divergence.description": "Все ваши снаряды имеют повышенную точность.",
@@ -86,7 +88,7 @@
   "power.origins-classes.better_enchanting.name": "Мастер чар",
   "power.origins-classes.better_enchanting.description": "Вы можете накладывать чары получше на чародейском столе.",
 
-  "power.origins-classes.quality_equipment.name": "Стальные нервы",
+  "power.origins-classes.quality_equipment.name": "Качественное снаряжение",
   "power.origins-classes.quality_equipment.description": "Созданное вами сняряжение будет иметь небольшое улучшение.",
 
   "power.origins-classes.efficient_repairs.name": "Эффективный ремонт",
@@ -113,7 +115,7 @@
   "power.origins-classes.no_sprint_exhaustion.name": "В форме",
   "power.origins-classes.no_sprint_exhaustion.description": "Бег не заставляет вас утомляться.",
 
-  "power.origins-classes.explorer_kit.name": "Комплект Исследователя",
+  "power.origins-classes.explorer_kit.name": "Комплект исследователя",
   "power.origins-classes.explorer_kit.description": "Вы начинаете игру с компасом, часами и девятью пустыми картами.",
 
   "power.origins-classes.no_mining_exhaustion.name": "Опытный землекоп",

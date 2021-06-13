@@ -67,7 +67,7 @@ public class ClassesPowerFactories {
                                             BlockPos savedNewPos = newPos.toImmutable();
                                             affected.add(savedNewPos);
                                             queue.add(savedNewPos);
-                                            if(affected.size() > 127) {
+                                            if(affected.size() > 255) {
                                                 if(!foundOneWithLeaves) {
                                                     return new ArrayList<>();
                                                 }

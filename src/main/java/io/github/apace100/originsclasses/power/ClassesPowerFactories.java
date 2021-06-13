@@ -1,27 +1,21 @@
 package io.github.apace100.originsclasses.power;
 
-import io.github.apace100.origins.Origins;
-import io.github.apace100.origins.power.DamageOverTimePower;
-import io.github.apace100.origins.power.PowerType;
-import io.github.apace100.origins.power.VariableIntPower;
-import io.github.apace100.origins.power.factory.PowerFactory;
-import io.github.apace100.origins.power.factory.condition.ConditionFactory;
-import io.github.apace100.origins.registry.ModDamageSources;
-import io.github.apace100.origins.registry.ModRegistries;
-import io.github.apace100.origins.util.SerializableData;
-import io.github.apace100.origins.util.SerializableDataType;
+import io.github.apace100.apoli.data.ApoliDataTypes;
+import io.github.apace100.apoli.power.VariableIntPower;
+import io.github.apace100.apoli.power.factory.PowerFactory;
+import io.github.apace100.apoli.power.factory.condition.ConditionFactory;
+import io.github.apace100.apoli.registry.ApoliRegistries;
+import io.github.apace100.calio.data.SerializableData;
+import io.github.apace100.calio.data.SerializableDataType;
+import io.github.apace100.calio.data.SerializableDataTypes;
 import io.github.apace100.originsclasses.OriginsClasses;
-import io.github.apace100.originsclasses.data.ClassesDataTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 
@@ -33,9 +27,9 @@ public class ClassesPowerFactories {
     public static void register() {
         register(new PowerFactory<>(new Identifier(OriginsClasses.MODID, "craft_amount"),
             new SerializableData()
-                .add("item_condition", SerializableDataType.ITEM_CONDITION, null)
-                .add("modifier", SerializableDataType.ATTRIBUTE_MODIFIER, null)
-                .add("modifiers", SerializableDataType.ATTRIBUTE_MODIFIERS, null),
+                .add("item_condition", ApoliDataTypes.ITEM_CONDITION, null)
+                .add("modifier", SerializableDataTypes.ATTRIBUTE_MODIFIER, null)
+                .add("modifiers", SerializableDataTypes.ATTRIBUTE_MODIFIERS, null),
             data ->
                 (type, player) -> {
                     CraftAmountPower power = new CraftAmountPower(type, player, data.isPresent("item_condition") ?
@@ -52,7 +46,7 @@ public class ClassesPowerFactories {
         register(new PowerFactory<>(new Identifier(OriginsClasses.MODID, "lumberjack"),
             new SerializableData(),
             data ->
-                (type, player) -> new MultiMinePower(type, player, (pl, bs, bp) -> {
+                (type, entity) -> new MultiMinePower(type, entity, (pl, bs, bp) -> {
                         Set<BlockPos> affected = new HashSet<>();
                         Queue<BlockPos> queue = new LinkedList<>();
                         queue.add(bp);
@@ -91,18 +85,18 @@ public class ClassesPowerFactories {
                             affected.clear();
                         }
                         return new ArrayList<>(affected);
-                    }, state -> state.getBlock().isIn(BlockTags.LOGS)).addCondition(p -> p.getMainHandStack().getItem() instanceof AxeItem)
+                    }, state -> BlockTags.LOGS.contains(state.getBlock())).addCondition(p -> p.getMainHandStack().getItem() instanceof AxeItem)
                 ));
         register(new PowerFactory<>(new Identifier(OriginsClasses.MODID, "variable_int"),
             new SerializableData()
-                .add("start_value", SerializableDataType.INT, null)
-                .add("min", SerializableDataType.INT, Integer.MIN_VALUE)
-                .add("max", SerializableDataType.INT, Integer.MAX_VALUE),
+                .add("start_value", SerializableDataTypes.INT, null)
+                .add("min", SerializableDataTypes.INT, Integer.MIN_VALUE)
+                .add("max", SerializableDataTypes.INT, Integer.MAX_VALUE),
             data ->
-                (type, player) -> new VariableIntPower(type, player, data.getInt("start_value"), data.getInt("min"), data.getInt("max"))));
+                (type, entity) -> new VariableIntPower(type, entity, data.getInt("start_value"), data.getInt("min"), data.getInt("max"))));
     }
 
     private static void register(PowerFactory<?> factory) {
-        Registry.register(ModRegistries.POWER_FACTORY, factory.getSerializerId(), factory);
+        Registry.register(ApoliRegistries.POWER_FACTORY, factory.getSerializerId(), factory);
     }
 }

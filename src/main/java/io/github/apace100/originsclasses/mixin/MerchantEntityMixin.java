@@ -6,7 +6,7 @@ import net.minecraft.entity.passive.WanderingTraderEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOfferList;
@@ -53,16 +53,16 @@ public class MerchantEntityMixin {
         }
     }
 
-    @Inject(method = "writeCustomDataToTag", at = @At("HEAD"))
-    private void writeAdditionalOffersToTag(CompoundTag tag, CallbackInfo ci) {
+    @Inject(method = "writeCustomDataToNbt", at = @At("HEAD"))
+    private void writeAdditionalOffersToTag(NbtCompound tag, CallbackInfo ci) {
         if(additionalOffers != null) {
-            tag.put("AdditionalOffers", additionalOffers.toTag());
+            tag.put("AdditionalOffers", additionalOffers.toNbt());
             tag.putInt("OfferCountNoAdditional", offerCountWithoutAdditional);
         }
     }
 
-    @Inject(method = "readCustomDataFromTag", at = @At("HEAD"))
-    private void readAdditionalOffersFromTag(CompoundTag tag, CallbackInfo ci) {
+    @Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
+    private void readAdditionalOffersFromTag(NbtCompound tag, CallbackInfo ci) {
         if(tag.contains("AdditionalOffers")) {
             additionalOffers = new TradeOfferList(tag.getCompound("AdditionalOffers"));
             offerCountWithoutAdditional = tag.getInt("OfferCountNoAdditional");

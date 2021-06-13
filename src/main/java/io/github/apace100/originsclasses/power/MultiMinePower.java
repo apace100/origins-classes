@@ -1,27 +1,22 @@
 package io.github.apace100.originsclasses.power;
 
-import io.github.apace100.origins.power.Power;
-import io.github.apace100.origins.power.PowerType;
-import io.github.apace100.origins.power.factory.condition.ConditionFactory;
+import io.github.apace100.apoli.power.Power;
+import io.github.apace100.apoli.power.PowerType;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.pattern.CachedBlockPosition;
 import net.minecraft.data.client.model.BlockStateVariantMap;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 import java.util.List;
-import java.util.function.BiFunction;
-import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class MultiMinePower extends Power {
 
-    private final BlockStateVariantMap.TriFunction<PlayerEntity, BlockState, BlockPos, List<BlockPos>> affectedBlocksFunction;
+    private final BlockStateVariantMap.TriFunction<LivingEntity, BlockState, BlockPos, List<BlockPos>> affectedBlocksFunction;
     private final Predicate<BlockState> isBlockStateAffected;
 
-    public MultiMinePower(PowerType<?> type, PlayerEntity player, BlockStateVariantMap.TriFunction<PlayerEntity, BlockState, BlockPos, List<BlockPos>> affectedBlocksFuntion, Predicate<BlockState> isBlockStateAffected) {
-        super(type, player);
+    public MultiMinePower(PowerType<?> type, LivingEntity entity, BlockStateVariantMap.TriFunction<LivingEntity, BlockState, BlockPos, List<BlockPos>> affectedBlocksFuntion, Predicate<BlockState> isBlockStateAffected) {
+        super(type, entity);
         this.affectedBlocksFunction = affectedBlocksFuntion;
         this.isBlockStateAffected = isBlockStateAffected;
     }
@@ -31,6 +26,6 @@ public class MultiMinePower extends Power {
     }
 
     public List<BlockPos> getAffectedBlocks(BlockState state, BlockPos position) {
-        return affectedBlocksFunction.apply(player, state, position);
+        return affectedBlocksFunction.apply(entity, state, position);
     }
 }

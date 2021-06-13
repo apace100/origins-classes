@@ -1,24 +1,10 @@
 package io.github.apace100.originsclasses.data;
 
 import com.google.common.collect.HashBiMap;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
-import com.google.gson.JsonSyntaxException;
-import com.mojang.brigadier.StringReader;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import io.github.apace100.origins.util.ClassUtil;
-import io.github.apace100.origins.util.SerializableData;
-import io.github.apace100.origins.util.SerializableDataType;
+import io.github.apace100.calio.data.SerializableDataType;
 import net.minecraft.block.Material;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtHelper;
-import net.minecraft.nbt.StringNbtReader;
-import net.minecraft.util.Pair;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class ClassesDataTypes {
 

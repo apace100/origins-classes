@@ -5,7 +5,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -27,7 +27,7 @@ public abstract class ItemMixin {
     @Environment(EnvType.CLIENT)
     private void appendFoodBonusInfo(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
         if(stack != null) {
-            CompoundTag tag = stack.hasTag() ? stack.getTag() : null;
+            NbtCompound tag = stack.hasTag() ? stack.getTag() : null;
             if(tag != null) {
                 if(tag.contains("FoodBonus")) {
                     int bonus = tag.getInt("FoodBonus");

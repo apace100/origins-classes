@@ -1,6 +1,5 @@
 package io.github.apace100.originsclasses.mixin;
 
-import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.annotation.Nullable;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
@@ -23,7 +22,7 @@ public class PotionItemMixin {
     
     @Inject(method = "appendTooltip", at = @At("HEAD"))
     @Environment(EnvType.CLIENT)
-    private void appendExtendedTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
+    private void appendExtendedTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
         if (stack.hasTag() && stack.getTag().contains("IsExtendedByCleric")) {
             tooltip.add(new TranslatableText("origins-classes.longer_potions").formatted(Formatting.GOLD));
         }

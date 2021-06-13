@@ -1,6 +1,6 @@
 package io.github.apace100.originsclasses.mixin;
 
-import io.github.apace100.origins.power.VariableIntPower;
+import io.github.apace100.apoli.power.VariableIntPower;
 import io.github.apace100.originsclasses.effect.StealthEffect;
 import io.github.apace100.originsclasses.power.ClassPowerTypes;
 import net.minecraft.entity.Entity;

@@ -1,21 +1,11 @@
 package io.github.apace100.originsclasses.power;
 
-import io.github.apace100.origins.power.*;
-import io.github.apace100.origins.registry.ModRegistries;
+import io.github.apace100.apoli.power.Power;
+import io.github.apace100.apoli.power.PowerType;
+import io.github.apace100.apoli.power.PowerTypeReference;
+import io.github.apace100.apoli.power.VariableIntPower;
 import io.github.apace100.originsclasses.OriginsClasses;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.OreBlock;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.registry.Registry;
 
 import java.util.*;
 

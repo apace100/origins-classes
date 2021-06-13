@@ -1,12 +1,9 @@
 package io.github.apace100.originsclasses;
 
-import io.github.apace100.origins.registry.ModRegistries;
 import io.github.apace100.originsclasses.condition.ClassesBlockConditions;
 import io.github.apace100.originsclasses.effect.StealthEffect;
-import io.github.apace100.originsclasses.power.ClassPowerTypes;
 import io.github.apace100.originsclasses.power.ClassesPowerFactories;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 

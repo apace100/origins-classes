@@ -1,5 +1,6 @@
 package io.github.apace100.originsclasses.mixin;
 
+import io.github.apace100.apoli.component.PowerHolderComponent;
 import io.github.apace100.origins.registry.ModComponents;
 import io.github.apace100.originsclasses.ducks.SneakingStateSavingManager;
 import io.github.apace100.originsclasses.networking.ModPacketsS2C;
@@ -42,7 +43,7 @@ public class AbstractBlockMixin {
                 toolDurability = tool.getMaxDamage() - tool.getDamage();
             }
             int finalToolDurability = toolDurability;
-            ModComponents.ORIGIN.get(player).getPowers(MultiMinePower.class).forEach(mmp -> {
+            PowerHolderComponent.KEY.get(player).getPowers(MultiMinePower.class).forEach(mmp -> {
                 int affectBlockCount = mmp.getAffectedBlocks(state, pos).size();
                 if(mmp.isBlockStateAffected(state) && affectBlockCount > 0) {
                     int multiplier = Math.min(affectBlockCount, finalToolDurability - 1);

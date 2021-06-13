@@ -1,5 +1,6 @@
 package io.github.apace100.originsclasses.mixin;
 
+import io.github.apace100.apoli.component.PowerHolderComponent;
 import io.github.apace100.origins.registry.ModComponents;
 import io.github.apace100.originsclasses.ducks.SneakingStateSavingManager;
 import io.github.apace100.originsclasses.networking.ModPackets;
@@ -52,7 +53,7 @@ public abstract class ServerPlayerInteractionManagerMixin implements SneakingSta
     private void multiMinePower(BlockPos pos, PlayerActionC2SPacket.Action action, String reason, CallbackInfo ci) {
         if(!wasSneakingWhenStarted && !performingMultiMine) {
             performingMultiMine = true;
-            ModComponents.ORIGIN.get(player).getPowers(MultiMinePower.class).forEach(mmp -> {
+            PowerHolderComponent.KEY.get(player).getPowers(MultiMinePower.class).forEach(mmp -> {
                 if(mmp.isBlockStateAffected(justMinedBlockState)) {
                     ItemStack tool = player.getMainHandStack().copy();
                     for(BlockPos bp : mmp.getAffectedBlocks(justMinedBlockState, pos)) {

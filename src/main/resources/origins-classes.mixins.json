@@ -10,6 +10,7 @@
     "AnvilScreenHandlerMixin",
     "BlockMixin",
     "BoneMealItemMixin",
+    "BrewingStandPotionSlotMixin",
     "CauldronBlockMixin",
     "CombinedEntryAccessor",
     "CraftingInventoryAccessor",

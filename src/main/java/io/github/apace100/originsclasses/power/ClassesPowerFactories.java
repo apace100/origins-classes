@@ -74,7 +74,7 @@ public class ClassesPowerFactories {
                                                 return new ArrayList<>(affected);
                                             }
                                         } else
-                                        if(state.getBlock() instanceof LeavesBlock && !state.get(LeavesBlock.PERSISTENT)) {
+                                        if((BlockTags.LEAVES.contains(state.getBlock()) || state.getBlock() instanceof LeavesBlock) && !state.get(LeavesBlock.PERSISTENT)) {
                                             foundOneWithLeaves = true;
                                         }
                                     }

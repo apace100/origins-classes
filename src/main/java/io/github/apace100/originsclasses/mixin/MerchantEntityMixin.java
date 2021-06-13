@@ -1,15 +1,24 @@
 package io.github.apace100.originsclasses.mixin;
 
 import io.github.apace100.originsclasses.power.ClassPowerTypes;
+import io.github.apace100.originsclasses.util.ClassesTags;
+import io.github.apace100.originsclasses.util.ItemUtil;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.WanderingTraderEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootManager;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOfferList;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,15 +26,20 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 @Mixin(MerchantEntity.class)
-public class MerchantEntityMixin {
+public abstract class MerchantEntityMixin {
 
     @Shadow
     protected TradeOfferList offers;
     @Shadow
     private PlayerEntity customer;
+
+    @Shadow public abstract World getMerchantWorld();
+
     private int offerCountWithoutAdditional;
     private TradeOfferList additionalOffers;
 
@@ -69,30 +83,34 @@ public class MerchantEntityMixin {
         }
     }
 
-    private static TradeOfferList buildAdditionalOffers() {
+    private TradeOfferList buildAdditionalOffers() {
         TradeOfferList list = new TradeOfferList();
         Random random = new Random();
-        int r = random.nextInt(9);
-        switch(r) {
-            case 0:
-                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 33), new ItemStack(Items.DIAMOND_SWORD), 2, 5, 0.05F));
-                break;
-            case 1:
-                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 21), new ItemStack(Items.DIAMOND, 3), 1, 5, 0.05F));
-                break;
-            case 2:
-                list.add(new TradeOffer(new ItemStack(Items.PHANTOM_MEMBRANE, 5), new ItemStack(Items.EXPERIENCE_BOTTLE, 12), 1, 5, 0.05F));
-                break;
-            case 3:
-                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 14), new ItemStack(Items.GOLDEN_APPLE), 2, 5, 0.05F));
-                break;
-            case 4:
-                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 5), new ItemStack(Items.SPONGE), 3, 2, 0.05F));
-                break;
-            case 5: case 6: case 7: case 8:
-                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 16), new ItemStack(Registry.ITEM.getRandom(random)), 1, 5, 0.05F));
-                break;
-        }
+        Set<Item> excludedItems = new HashSet<>(ClassesTags.MERCHANT_BLACKLIST.values());
+        list.add(new TradeOffer(
+            new ItemStack(Items.EMERALD, random.nextInt(12) + 6),
+            ItemUtil.createMerchantItemStack(ItemUtil.getRandomObtainableItem(
+                getMerchantWorld().getServer(),
+                random,
+                excludedItems), random),
+            1,
+            5,
+            0.05F)
+        );
+        Item desiredItem = ItemUtil.getRandomObtainableItem(
+            getMerchantWorld().getServer(),
+            random,
+            excludedItems);
+        list.add(new TradeOffer(
+            new ItemStack(desiredItem, 1 + random.nextInt(Math.min(16, desiredItem.getMaxCount()))),
+            ItemUtil.createMerchantItemStack(ItemUtil.getRandomObtainableItem(
+                getMerchantWorld().getServer(),
+                random,
+                excludedItems), random),
+            1,
+            5,
+            0.05F)
+        );
         return list;
     }
 }

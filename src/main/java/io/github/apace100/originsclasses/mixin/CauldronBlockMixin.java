@@ -34,7 +34,7 @@ public abstract class CauldronBlockMixin {
 
     @Inject(method = "onUse", at = @At(value = "RETURN", ordinal = 0), cancellable = true)
     private void extendPotionDuration(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
-        if(ClassPowerTypes.LONGER_POTIONS.isActive(player)) {
+        if((Object)this instanceof LeveledCauldronBlock && ClassPowerTypes.LONGER_POTIONS.isActive(player)) {
             ItemStack stack = player.getStackInHand(hand);
             int level = state.get(LeveledCauldronBlock.LEVEL);
             if(stack.getItem() instanceof PotionItem && level > 0 && (!stack.hasTag() || !stack.getTag().getBoolean("IsExtendedByCleric"))) {

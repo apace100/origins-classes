@@ -18,8 +18,19 @@ public class SimpleMerchantMixin {
 
     @Redirect(method = "trade", at = @At(value = "INVOKE", target = "Lnet/minecraft/village/TradeOffer;use()V"))
     private void preventUseClientSide(TradeOffer tradeOffer) {
+        int rand_trade = random.nextInt(3);
         if(ModPacketsS2C.isWanderingTrader || !ClassPowerTypes.TRADE_AVAILABILITY.isActive(player)) {
             tradeOffer.use();
+        } else {
+            switch(r) {
+                case 0:
+                    tradeOffer.use();
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
         }
     }
 }

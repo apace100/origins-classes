@@ -6,6 +6,7 @@ import net.minecraft.entity.passive.WanderingTraderEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tag.ItemTags;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.village.TradeOffer;
@@ -29,10 +30,22 @@ public class MerchantEntityMixin {
     private int offerCountWithoutAdditional;
     private TradeOfferList additionalOffers;
 
+
     @Redirect(method = "trade", at = @At(value = "INVOKE", target = "Lnet/minecraft/village/TradeOffer;use()V"))
     private void dontUseUpTrades(TradeOffer tradeOffer) {
+        int rand_trade = random.nextInt(3);
         if(((Object)this instanceof WanderingTraderEntity) || !ClassPowerTypes.TRADE_AVAILABILITY.isActive(this.customer)) {
             tradeOffer.use();
+        } else {
+            switch(rand_trade) {
+                case 0:
+                tradeOffer.use();
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
         }
     }
 
@@ -81,7 +94,7 @@ public class MerchantEntityMixin {
                 list.add(new TradeOffer(new ItemStack(Items.EMERALD, 21), new ItemStack(Items.DIAMOND, 3), 1, 5, 0.05F));
                 break;
             case 2:
-                list.add(new TradeOffer(new ItemStack(Items.PHANTOM_MEMBRANE, 5), new ItemStack(Items.EXPERIENCE_BOTTLE, 12), 1, 5, 0.05F));
+                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 5), new ItemStack(Items.EXPERIENCE_BOTTLE, 12), 1, 5, 0.05F));
                 break;
             case 3:
                 list.add(new TradeOffer(new ItemStack(Items.EMERALD, 14), new ItemStack(Items.GOLDEN_APPLE), 2, 5, 0.05F));
@@ -89,8 +102,17 @@ public class MerchantEntityMixin {
             case 4:
                 list.add(new TradeOffer(new ItemStack(Items.EMERALD, 5), new ItemStack(Items.SPONGE), 3, 2, 0.05F));
                 break;
-            case 5: case 6: case 7: case 8:
-                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 16), new ItemStack(Registry.ITEM.getRandom(random)), 1, 5, 0.05F));
+            case 5:
+                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 5), new ItemStack(Items.SPORE_BLOSSOM), 10, 5, 0.05F));
+                break;
+            case 6:
+                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 16), new ItemStack(Items.BIG_DRIPLEAF), 1, 5, 0.05F));
+                break;
+            case 7:
+                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 16), new ItemStack(Items.SMALL_DRIPLEAF), 1, 5, 0.05F));
+                break;
+            case 8:
+                list.add(new TradeOffer(new ItemStack(Items.EMERALD, 1), new ItemStack(ItemTags.FLOWERS.getRandom(random)), 64, 5, 0.05F));
                 break;
         }
         return list;

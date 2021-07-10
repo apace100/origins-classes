@@ -33,7 +33,7 @@ public class MerchantEntityMixin {
 
     @Redirect(method = "trade", at = @At(value = "INVOKE", target = "Lnet/minecraft/village/TradeOffer;use()V"))
     private void dontUseUpTrades(TradeOffer tradeOffer) {
-        int rand_trade = random.nextInt(3);
+        int rand_trade = random.nextInt(4);
         if(((Object)this instanceof WanderingTraderEntity) || !ClassPowerTypes.TRADE_AVAILABILITY.isActive(this.customer)) {
             tradeOffer.use();
         } else {
@@ -41,9 +41,7 @@ public class MerchantEntityMixin {
                 case 0:
                 tradeOffer.use();
                     break;
-                case 1:
-                    break;
-                case 2:
+                default:
                     break;
             }
         }

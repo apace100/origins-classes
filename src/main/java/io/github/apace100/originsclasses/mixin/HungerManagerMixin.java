@@ -17,8 +17,8 @@ public abstract class HungerManagerMixin {
 
     @Inject(method = "eat", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/HungerManager;add(IF)V", shift = At.Shift.AFTER))
     private void addFoodBonus(Item item, ItemStack stack, CallbackInfo ci) {
-        if(stack.hasTag()) {
-            NbtCompound tag = stack.getTag();
+        if(stack.hasNbt()) {
+            NbtCompound tag = stack.getNbt();
             if(tag.contains("FoodBonus")) {
                 int foodBonus = tag.getInt("FoodBonus");
                 float saturationBonus = (float)foodBonus * 0.2F;

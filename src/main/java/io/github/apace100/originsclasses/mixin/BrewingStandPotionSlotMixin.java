@@ -11,7 +11,7 @@ public class BrewingStandPotionSlotMixin {
 
     @Inject(method = { "matches", "method_7631" }, at = @At("HEAD"), cancellable = true)
     private static void preventBrewingExtendedPotions(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if(stack.getOrCreateTag().getBoolean("IsExtendedByCleric")) {
+        if(stack.getOrCreateNbt().getBoolean("IsExtendedByCleric")) {
             cir.setReturnValue(false);
         }
     }

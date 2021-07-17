@@ -23,7 +23,7 @@ public class PotionItemMixin {
     @Inject(method = "appendTooltip", at = @At("HEAD"))
     @Environment(EnvType.CLIENT)
     private void appendExtendedTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
-        if (stack.hasTag() && stack.getTag().contains("IsExtendedByCleric")) {
+        if (stack.hasNbt() && stack.getNbt().contains("IsExtendedByCleric")) {
             tooltip.add(new TranslatableText("origins-classes.longer_potions").formatted(Formatting.GOLD));
         }
     }

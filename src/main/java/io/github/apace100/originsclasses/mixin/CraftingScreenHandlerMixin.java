@@ -3,6 +3,7 @@ package io.github.apace100.originsclasses.mixin;
 import io.github.apace100.apoli.component.PowerHolderComponent;
 import io.github.apace100.calio.Calio;
 import io.github.apace100.origins.component.OriginComponent;
+import io.github.apace100.originsclasses.OriginsClasses;
 import io.github.apace100.originsclasses.power.ClassPowerTypes;
 import io.github.apace100.originsclasses.power.CraftAmountPower;
 import net.minecraft.entity.EquipmentSlot;
@@ -13,6 +14,7 @@ import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.item.*;
 import net.minecraft.recipe.CraftingRecipe;
+import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.screen.CraftingScreenHandler;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -20,6 +22,7 @@ import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.ItemTags;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -38,16 +41,19 @@ public class CraftingScreenHandlerMixin {
             if(foodBonus < 1) {
                 foodBonus = 1;
             }
-            itemStack.getOrCreateTag().putInt("FoodBonus", foodBonus);
+            itemStack.getOrCreateNbt().putInt("FoodBonus", foodBonus);
         }
         if(ClassPowerTypes.QUALITY_EQUIPMENT.isActive(player) && isEquipment(itemStack)) {
-            addQualityAttribute(itemStack);
-        }
-        /*if(ClassPowerTypes.MORE_PLANKS_FROM_LOGS.isActive(player)) {
-            if(itemStack.getItem().isIn(ItemTags.PLANKS) && itemStack.getCount() == 4) {
-                itemStack.setCount(6);
+            boolean recipeContainsEquipment = false;
+            for(int i = 0; i < craftingInventory.size() && !recipeContainsEquipment; i++) {
+                if(isEquipment(craftingInventory.getStack(i))) {
+                    recipeContainsEquipment = true;
+                }
             }
-        }*/
+            if(!recipeContainsEquipment) {
+                addQualityAttribute(itemStack);
+            }
+        }
         int baseValue = itemStack.getCount();
         int newValue = (int) PowerHolderComponent.modify(player, CraftAmountPower.class, baseValue, (p -> p.doesApply(itemStack)));
         if(newValue != baseValue) {
@@ -65,7 +71,7 @@ public class CraftingScreenHandlerMixin {
             stack.addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier("Blacksmith quality", 0.5D, EntityAttributeModifier.Operation.ADDITION), EquipmentSlot.MAINHAND);
             Calio.setEntityAttributesAdditional(stack, true);
         } else if(item instanceof MiningToolItem || item instanceof ShearsItem) {
-            stack.getOrCreateTag().putFloat("MiningSpeedMultiplier", 1.05F);
+            stack.getOrCreateNbt().putFloat("MiningSpeedMultiplier", 1.05F);
         } else if(item instanceof ShieldItem) {
             stack.addAttributeModifier(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, new EntityAttributeModifier("Blacksmith quality", 0.1D, EntityAttributeModifier.Operation.ADDITION), EquipmentSlot.OFFHAND);
             Calio.setEntityAttributesAdditional(stack, true);
@@ -73,6 +79,9 @@ public class CraftingScreenHandlerMixin {
     }
 
     private static boolean isEquipment(ItemStack stack) {
+        if(stack == null || stack.isEmpty()) {
+            return false;
+        }
         Item item = stack.getItem();
         if(item instanceof ArmorItem)
             return true;

@@ -27,7 +27,7 @@ public abstract class ItemMixin {
     @Environment(EnvType.CLIENT)
     private void appendFoodBonusInfo(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
         if(stack != null) {
-            NbtCompound tag = stack.hasTag() ? stack.getTag() : null;
+            NbtCompound tag = stack.hasNbt() ? stack.getNbt() : null;
             if(tag != null) {
                 if(tag.contains("FoodBonus")) {
                     int bonus = tag.getInt("FoodBonus");

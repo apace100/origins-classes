@@ -17,8 +17,8 @@ public class MiningToolItemMixin {
     @Redirect(method = "getMiningSpeedMultiplier", at = @At(value = "FIELD", target = "Lnet/minecraft/item/MiningToolItem;miningSpeed:F", opcode = org.objectweb.asm.Opcodes.GETFIELD, ordinal = 0))
     private float applyMiningSpeedMultiplierMultiplier(MiningToolItem item, ItemStack stack, BlockState blockState) {
         if(stack != null) {
-            if(stack.hasTag() && stack.getTag().contains("MiningSpeedMultiplier")) {
-                return miningSpeed * stack.getTag().getFloat("MiningSpeedMultiplier");
+            if(stack.hasNbt() && stack.getNbt().contains("MiningSpeedMultiplier")) {
+                return miningSpeed * stack.getNbt().getFloat("MiningSpeedMultiplier");
             }
         }
         return miningSpeed;

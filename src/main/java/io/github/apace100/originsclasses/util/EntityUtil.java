@@ -14,6 +14,5 @@ public final class EntityUtil {
         if(entity.getAttributes().hasAttribute(EntityAttributes.GENERIC_ATTACK_DAMAGE)) {
             entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier("Beastmaster boost", 1.5, EntityAttributeModifier.Operation.ADDITION));
         }
-        System.out.println("Added BEASTMASTER attributes to: " + entity.getEntityName());
     }
 }

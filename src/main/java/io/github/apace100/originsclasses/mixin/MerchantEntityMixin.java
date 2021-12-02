@@ -38,8 +38,6 @@ public abstract class MerchantEntityMixin {
     @Shadow
     private PlayerEntity customer;
 
-    @Shadow public abstract World getMerchantWorld();
-
     private int offerCountWithoutAdditional;
     private TradeOfferList additionalOffers;
 
@@ -90,7 +88,7 @@ public abstract class MerchantEntityMixin {
         list.add(new TradeOffer(
             new ItemStack(Items.EMERALD, random.nextInt(12) + 6),
             ItemUtil.createMerchantItemStack(ItemUtil.getRandomObtainableItem(
-                getMerchantWorld().getServer(),
+                customer.world.getServer(),
                 random,
                 excludedItems), random),
             1,
@@ -98,13 +96,13 @@ public abstract class MerchantEntityMixin {
             0.05F)
         );
         Item desiredItem = ItemUtil.getRandomObtainableItem(
-            getMerchantWorld().getServer(),
+            customer.world.getServer(),
             random,
             excludedItems);
         list.add(new TradeOffer(
             new ItemStack(desiredItem, 1 + random.nextInt(Math.min(16, desiredItem.getMaxCount()))),
             ItemUtil.createMerchantItemStack(ItemUtil.getRandomObtainableItem(
-                getMerchantWorld().getServer(),
+                customer.world.getServer(),
                 random,
                 excludedItems), random),
             1,

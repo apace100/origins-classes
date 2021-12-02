@@ -11,6 +11,7 @@ import io.github.apace100.calio.data.SerializableDataTypes;
 import io.github.apace100.originsclasses.OriginsClasses;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
@@ -33,7 +34,7 @@ public class ClassesPowerFactories {
             data ->
                 (type, player) -> {
                     CraftAmountPower power = new CraftAmountPower(type, player, data.isPresent("item_condition") ?
-                        (ConditionFactory<ItemStack>.Instance)data.get("item_condition") : (stack -> true));
+                        data.get("item_condition") : (stack -> true));
                     if(data.isPresent("modifier")) {
                         power.addModifier(data.getModifier("modifier"));
                     }
@@ -85,7 +86,7 @@ public class ClassesPowerFactories {
                             affected.clear();
                         }
                         return new ArrayList<>(affected);
-                    }, state -> BlockTags.LOGS.contains(state.getBlock())).addCondition(p -> p.getMainHandStack().getItem() instanceof AxeItem)
+                    }, state -> BlockTags.LOGS.contains(state.getBlock())).addCondition(e -> e instanceof LivingEntity l && l.getMainHandStack().getItem() instanceof AxeItem)
                 ));
         register(new PowerFactory<>(new Identifier(OriginsClasses.MODID, "variable_int"),
             new SerializableData()

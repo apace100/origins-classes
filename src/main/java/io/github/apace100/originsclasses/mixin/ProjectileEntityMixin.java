@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 @Mixin(ProjectileEntity.class)
 public class ProjectileEntityMixin {
 
-    @ModifyVariable(method = "setProperties", at = @At("HEAD"), ordinal = 4, argsOnly = true)
+    @ModifyVariable(method = "setVelocity(Lnet/minecraft/entity/Entity;FFFFF)V", at = @At("HEAD"), ordinal = 4, argsOnly = true)
     private float modifyDivergence(float oldDivergence, Entity user) {
         if(ClassPowerTypes.NO_PROJECTILE_DIVERGENCE.isActive(user)) {
             return 0F;

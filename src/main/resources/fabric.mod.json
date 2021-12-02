@@ -32,11 +32,8 @@
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.17.x",
-    "origins": ">=1.0.0",
-    "java": ">=16"
-  },
-  "suggests": {
-    "flamingo": "*"
+    "minecraft": "1.18.x",
+    "origins": ">=1.2.0",
+    "java": ">=17"
   }
 }

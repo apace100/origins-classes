@@ -3,7 +3,9 @@ package io.github.apace100.originsclasses.mixin;
 import io.github.apace100.originsclasses.power.ClassPowerTypes;
 import io.github.apace100.originsclasses.util.ClassesTags;
 import io.github.apace100.originsclasses.util.ItemUtil;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.MerchantEntity;
+import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.WanderingTraderEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -31,7 +33,7 @@ import java.util.Random;
 import java.util.Set;
 
 @Mixin(MerchantEntity.class)
-public abstract class MerchantEntityMixin {
+public abstract class MerchantEntityMixin extends PassiveEntity {
 
     @Shadow
     protected TradeOfferList offers;
@@ -40,6 +42,10 @@ public abstract class MerchantEntityMixin {
 
     private int offerCountWithoutAdditional;
     private TradeOfferList additionalOffers;
+
+    protected MerchantEntityMixin(EntityType<? extends PassiveEntity> entityType, World world) {
+        super(entityType, world);
+    }
 
     @Redirect(method = "trade", at = @At(value = "INVOKE", target = "Lnet/minecraft/village/TradeOffer;use()V"))
     private void dontUseUpTrades(TradeOffer tradeOffer) {
@@ -88,7 +94,7 @@ public abstract class MerchantEntityMixin {
         list.add(new TradeOffer(
             new ItemStack(Items.EMERALD, random.nextInt(12) + 6),
             ItemUtil.createMerchantItemStack(ItemUtil.getRandomObtainableItem(
-                customer.world.getServer(),
+                this.world.getServer(),
                 random,
                 excludedItems), random),
             1,
@@ -96,13 +102,13 @@ public abstract class MerchantEntityMixin {
             0.05F)
         );
         Item desiredItem = ItemUtil.getRandomObtainableItem(
-            customer.world.getServer(),
+            this.world.getServer(),
             random,
             excludedItems);
         list.add(new TradeOffer(
             new ItemStack(desiredItem, 1 + random.nextInt(Math.min(16, desiredItem.getMaxCount()))),
             ItemUtil.createMerchantItemStack(ItemUtil.getRandomObtainableItem(
-                customer.world.getServer(),
+                this.world.getServer(),
                 random,
                 excludedItems), random),
             1,

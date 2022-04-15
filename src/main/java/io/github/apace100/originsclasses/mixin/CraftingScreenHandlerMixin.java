@@ -14,6 +14,7 @@ import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.item.*;
 import net.minecraft.recipe.CraftingRecipe;
+import net.minecraft.recipe.RepairItemRecipe;
 import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.screen.CraftingScreenHandler;
 import net.minecraft.screen.ScreenHandler;
@@ -33,6 +34,14 @@ import java.util.Optional;
 @Mixin(CraftingScreenHandler.class)
 public class CraftingScreenHandlerMixin {
 
+    @Unique
+    private static Optional<CraftingRecipe> classes$CachedRecipe;
+
+    @Inject(method = "updateResult", at = @At(value = "INVOKE", target = "Ljava/util/Optional;isPresent()Z"), locals = LocalCapture.CAPTURE_FAILHARD)
+    private static void cacheRecipe(ScreenHandler handler, World world, PlayerEntity player, CraftingInventory craftingInventory, CraftingResultInventory resultInventory, CallbackInfo ci, ServerPlayerEntity serverPlayerEntity, ItemStack itemStack, Optional<CraftingRecipe> optional) {
+        classes$CachedRecipe = optional;
+    }
+
     @Inject(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/inventory/CraftingResultInventory;setStack(ILnet/minecraft/item/ItemStack;)V"), locals = LocalCapture.CAPTURE_FAILHARD)
     private static void modifyCraftingResult(ScreenHandler screenHandler, World world, PlayerEntity player, CraftingInventory craftingInventory, CraftingResultInventory resultInventory, CallbackInfo ci, ServerPlayerEntity serverPlayerEntity, ItemStack itemStack) {
         if(itemStack.getItem().isFood() && ClassPowerTypes.BETTER_CRAFTED_FOOD.isActive(player)) {
@@ -49,6 +58,9 @@ public class CraftingScreenHandlerMixin {
                 if(isEquipment(craftingInventory.getStack(i))) {
                     recipeContainsEquipment = true;
                 }
+            }
+            if(classes$CachedRecipe.isPresent() && classes$CachedRecipe.get() instanceof RepairItemRecipe) {
+                recipeContainsEquipment = false;
             }
             if(!recipeContainsEquipment) {
                 addQualityAttribute(itemStack);

@@ -5,6 +5,7 @@ import net.minecraft.loot.entry.CombinedEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.entry.TagEntry;
 import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
@@ -12,5 +13,5 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 public interface TagEntryAccessor {
 
     @Accessor
-    Tag<Item> getName();
+    TagKey<Item> getName();
 }

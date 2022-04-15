@@ -3,7 +3,7 @@ package io.github.apace100.originsclasses.power;
 import io.github.apace100.apoli.power.Power;
 import io.github.apace100.apoli.power.PowerType;
 import net.minecraft.block.BlockState;
-import net.minecraft.data.client.model.BlockStateVariantMap;
+import net.minecraft.data.client.BlockStateVariantMap;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 

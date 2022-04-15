@@ -14,6 +14,7 @@ import net.minecraft.loot.entry.TagEntry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 import java.util.*;
 
@@ -69,7 +70,7 @@ public class ItemUtil {
                 if(entry instanceof ItemEntry) {
                     OBTAINABLE.add(((ItemEntryAccessor)entry).getItem());
                 } else if(entry instanceof TagEntry) {
-                    OBTAINABLE.addAll(((TagEntryAccessor)entry).getName().values());
+                    OBTAINABLE.addAll(TagUtil.getAllEntries(Registry.ITEM, ((TagEntryAccessor)entry).getName()));
                 } else if(entry instanceof CombinedEntry) {
                     entryQueue.addAll(Arrays.asList(((CombinedEntryAccessor)entry).getChildren()));
                 }

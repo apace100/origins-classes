@@ -75,7 +75,7 @@ public class ClassesPowerFactories {
                                                 return new ArrayList<>(affected);
                                             }
                                         } else
-                                        if((BlockTags.LEAVES.contains(state.getBlock()) || state.getBlock() instanceof LeavesBlock) && !state.get(LeavesBlock.PERSISTENT)) {
+                                        if((state.isIn(BlockTags.LEAVES) || state.getBlock() instanceof LeavesBlock) && !state.get(LeavesBlock.PERSISTENT)) {
                                             foundOneWithLeaves = true;
                                         }
                                     }
@@ -86,7 +86,7 @@ public class ClassesPowerFactories {
                             affected.clear();
                         }
                         return new ArrayList<>(affected);
-                    }, state -> BlockTags.LOGS.contains(state.getBlock())).addCondition(e -> e instanceof LivingEntity l && l.getMainHandStack().getItem() instanceof AxeItem)
+                    }, state -> state.isIn(BlockTags.LOGS)).addCondition(e -> e instanceof LivingEntity l && l.getMainHandStack().getItem() instanceof AxeItem)
                 ));
         register(new PowerFactory<>(new Identifier(OriginsClasses.MODID, "variable_int"),
             new SerializableData()

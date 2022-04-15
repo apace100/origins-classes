@@ -3,6 +3,7 @@ package io.github.apace100.originsclasses.mixin;
 import io.github.apace100.originsclasses.power.ClassPowerTypes;
 import io.github.apace100.originsclasses.util.ClassesTags;
 import io.github.apace100.originsclasses.util.ItemUtil;
+import io.github.apace100.originsclasses.util.TagUtil;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -54,7 +55,7 @@ public abstract class MerchantEntityMixin extends PassiveEntity {
         }
     }
 
-    @Inject(method = "setCurrentCustomer", at = @At("HEAD"))
+    @Inject(method = "setCustomer", at = @At("HEAD"))
     private void addAdditionalOffers(PlayerEntity customer, CallbackInfo ci) {
         if((Object)this instanceof WanderingTraderEntity) {
             if (ClassPowerTypes.RARE_WANDERING_LOOT.isActive(customer)) {
@@ -90,7 +91,7 @@ public abstract class MerchantEntityMixin extends PassiveEntity {
     private TradeOfferList buildAdditionalOffers() {
         TradeOfferList list = new TradeOfferList();
         Random random = new Random();
-        Set<Item> excludedItems = new HashSet<>(ClassesTags.MERCHANT_BLACKLIST.values());
+        Set<Item> excludedItems = TagUtil.getAllEntries(Registry.ITEM, ClassesTags.MERCHANT_BLACKLIST);
         list.add(new TradeOffer(
             new ItemStack(Items.EMERALD, random.nextInt(12) + 6),
             ItemUtil.createMerchantItemStack(ItemUtil.getRandomObtainableItem(

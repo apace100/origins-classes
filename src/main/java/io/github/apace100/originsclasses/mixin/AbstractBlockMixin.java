@@ -1,19 +1,14 @@
 package io.github.apace100.originsclasses.mixin;
 
 import io.github.apace100.apoli.component.PowerHolderComponent;
-import io.github.apace100.origins.registry.ModComponents;
 import io.github.apace100.originsclasses.ducks.SneakingStateSavingManager;
 import io.github.apace100.originsclasses.networking.ModPacketsS2C;
-import io.github.apace100.originsclasses.power.ClassPowerTypes;
 import io.github.apace100.originsclasses.power.MultiMinePower;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
-import net.minecraft.data.client.model.BlockStateVariantMap;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
@@ -52,14 +47,5 @@ public class AbstractBlockMixin {
                 }
             });
         }
-        /*
-        if(ClassPowerTypes.MORE_STONE_BREAK_SPEED.isActive(player)) {
-            ItemStack tool = player.getEquippedStack(EquipmentSlot.MAINHAND);
-            if(tool.getItem() instanceof PickaxeItem) {
-                if(state.getMaterial() == Material.STONE) {
-                    cir.setReturnValue(cir.getReturnValueF() * 1.5F);
-                }
-            }
-        }*/
     }
 }

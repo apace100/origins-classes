@@ -10,9 +10,11 @@ import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.ShieldItem;
+import net.minecraft.network.encryption.PlayerPublicKey;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.Constant;
@@ -21,8 +23,8 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 @Mixin(ClientPlayerEntity.class)
 public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
 
-    public ClientPlayerEntityMixin(ClientWorld world, GameProfile profile) {
-        super(world, profile);
+    public ClientPlayerEntityMixin(ClientWorld world, GameProfile profile, @Nullable PlayerPublicKey publicKey) {
+        super(world, profile, publicKey);
     }
 
     @Shadow public abstract Hand getActiveHand();

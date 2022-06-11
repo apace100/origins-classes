@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,12 +31,12 @@ public abstract class ItemMixin {
             if(tag != null) {
                 if(tag.contains("FoodBonus")) {
                     int bonus = tag.getInt("FoodBonus");
-                    tooltip.add(new TranslatableText("origins-classes.food_bonus", bonus).formatted(Formatting.GRAY));
+                    tooltip.add(Text.translatable("origins-classes.food_bonus", bonus).formatted(Formatting.GRAY));
                 }
                 if(tag.contains("MiningSpeedMultiplier")) {
                     int bonusInt = Math.round((tag.getFloat("MiningSpeedMultiplier") - 1F) * 100);
                     String bonus = bonusInt > 0 ? ("+" + bonusInt + "%") : (bonusInt + "%");
-                    tooltip.add(new TranslatableText("origins-classes.mining_speed_bonus", bonus).formatted(Formatting.BLUE));
+                    tooltip.add(Text.translatable("origins-classes.mining_speed_bonus", bonus).formatted(Formatting.BLUE));
                 }
             }
         }

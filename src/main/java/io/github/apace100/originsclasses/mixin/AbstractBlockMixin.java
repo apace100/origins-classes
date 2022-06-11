@@ -17,8 +17,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.List;
-
 @Mixin(AbstractBlock.class)
 public class AbstractBlockMixin {
 
@@ -39,11 +37,13 @@ public class AbstractBlockMixin {
             }
             int finalToolDurability = toolDurability;
             PowerHolderComponent.KEY.get(player).getPowers(MultiMinePower.class).forEach(mmp -> {
-                int affectBlockCount = mmp.getAffectedBlocks(state, pos).size();
-                if(mmp.isBlockStateAffected(state) && affectBlockCount > 0) {
-                    int multiplier = Math.min(affectBlockCount, finalToolDurability - 1);
-                    multiplier = (int)Math.ceil((float)multiplier * 0.75F);
-                    cir.setReturnValue(cir.getReturnValueF() / multiplier);
+                if(mmp.isBlockStateAffected(state)) {
+                    int affectBlockCount = mmp.getAffectedBlocks(state, pos).size();
+                    if(affectBlockCount > 0) {
+                        int multiplier = Math.min(affectBlockCount, finalToolDurability - 1);
+                        multiplier = (int)Math.ceil((float)multiplier * 0.75F);
+                        cir.setReturnValue(cir.getReturnValueF() / multiplier);
+                    }
                 }
             });
         }

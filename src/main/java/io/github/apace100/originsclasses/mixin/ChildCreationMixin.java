@@ -44,9 +44,9 @@ public class ChildCreationMixin {
     }
 
     @Mixin(HorseEntity.class)
-    public static abstract class HorseKids extends HorseBaseEntity {
+    public static abstract class HorseKids extends AbstractHorseEntity {
 
-        protected HorseKids(EntityType<? extends HorseBaseEntity> entityType, World world) {
+        protected HorseKids(EntityType<? extends AbstractHorseEntity> entityType, World world) {
             super(entityType, world);
         }
 

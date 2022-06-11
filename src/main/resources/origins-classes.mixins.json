@@ -44,10 +44,10 @@
   ],
   "client": [
     "ClientPlayerEntityMixin",
+    "ClientWorldMixin",
     "EntityRendererMixin",
     "ItemMixin",
-    "SimpleMerchantMixin",
-    "WorldRendererMixin"
+    "SimpleMerchantMixin"
   ],
   "injectors": {
     "defaultRequire": 1

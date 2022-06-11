@@ -1,17 +1,11 @@
 package io.github.apace100.originsclasses;
 
-import io.github.apace100.origins.origin.Origin;
-import io.github.apace100.origins.origin.OriginLayer;
-import io.github.apace100.origins.origin.OriginLayers;
 import io.github.apace100.originsclasses.condition.ClassesBlockConditions;
 import io.github.apace100.originsclasses.effect.StealthEffect;
 import io.github.apace100.originsclasses.power.ClassesPowerFactories;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-
-import java.util.HashMap;
 
 public class OriginsClasses implements ModInitializer {
 
@@ -23,7 +17,6 @@ public class OriginsClasses implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ClassesPowerFactories.register();
-		//ClassPowerTypes.register();
 		ClassesBlockConditions.register();
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(MODID, "stealth"), StealthEffect.INSTANCE);
 	}

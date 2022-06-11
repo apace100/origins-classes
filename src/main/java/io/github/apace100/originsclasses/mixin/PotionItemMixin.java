@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.LingeringPotionItem;
 import net.minecraft.item.PotionItem;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -24,7 +24,7 @@ public class PotionItemMixin {
     @Environment(EnvType.CLIENT)
     private void appendExtendedTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
         if (stack.hasNbt() && stack.getNbt().contains("IsExtendedByCleric")) {
-            tooltip.add(new TranslatableText("origins-classes.longer_potions").formatted(Formatting.GOLD));
+            tooltip.add(Text.translatable("origins-classes.longer_potions").formatted(Formatting.GOLD));
         }
     }
 }

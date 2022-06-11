@@ -1,14 +1,13 @@
 package io.github.apace100.originsclasses.mixin;
 
 import io.github.apace100.apoli.component.PowerHolderComponent;
-import io.github.apace100.origins.registry.ModComponents;
+import io.github.apace100.origins.Origins;
 import io.github.apace100.originsclasses.ducks.SneakingStateSavingManager;
 import io.github.apace100.originsclasses.networking.ModPackets;
 import io.github.apace100.originsclasses.power.MultiMinePower;
 import io.netty.buffer.Unpooled;
-import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
@@ -28,36 +27,42 @@ public abstract class ServerPlayerInteractionManagerMixin implements SneakingSta
 
     @Shadow public ServerWorld world;
     @Shadow public ServerPlayerEntity player;
-    @Shadow public abstract void finishMining(BlockPos pos, PlayerActionC2SPacket.Action action, String reason);
 
     @Shadow private int blockBreakingProgress;
     @Shadow private int startMiningTime;
+
+    @Shadow public abstract void finishMining(BlockPos pos, int sequence, String reason);
+
+    @Shadow protected abstract void method_41250(BlockPos pos, boolean success, int sequence, String reason);
+
+    @Shadow public abstract boolean tryBreakBlock(BlockPos pos);
+
     private BlockState justMinedBlockState;
     private boolean performingMultiMine = false;
     private boolean wasSneakingWhenStarted = false;
 
     @Inject(method = "processBlockBreakingAction", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;onBlockBreakStart(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/PlayerEntity;)V", ordinal = 0))
-    private void saveSneakingState(BlockPos pos, PlayerActionC2SPacket.Action action, Direction direction, int worldHeight, CallbackInfo ci) {
+    private void saveSneakingState(BlockPos pos, PlayerActionC2SPacket.Action action, Direction direction, int worldHeight, int sequence, CallbackInfo ci) {
         wasSneakingWhenStarted = player.isSneaking();
         PacketByteBuf data = new PacketByteBuf(Unpooled.buffer());
         data.writeBoolean(!wasSneakingWhenStarted);
-        ServerSidePacketRegistry.INSTANCE.sendToPlayer(player, ModPackets.MULTI_MINING, data);
+        ServerPlayNetworking.send(player, ModPackets.MULTI_MINING, data);
     }
 
     @Inject(method = "finishMining", at = @At("HEAD"))
-    private void saveBlockStateForMultiMine(BlockPos pos, PlayerActionC2SPacket.Action action, String reason, CallbackInfo ci) {
+    private void saveBlockStateForMultiMine(BlockPos pos, int sequence, String reason, CallbackInfo ci) {
         justMinedBlockState = world.getBlockState(pos);
     }
 
-    @Inject(method = "finishMining", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/network/ServerPlayNetworkHandler;sendPacket(Lnet/minecraft/network/Packet;)V", ordinal = 0))
-    private void multiMinePower(BlockPos pos, PlayerActionC2SPacket.Action action, String reason, CallbackInfo ci) {
+    @Inject(method = "finishMining", at = @At(value = "INVOKE", ordinal = 0, target = "Lnet/minecraft/server/network/ServerPlayerInteractionManager;method_41250(Lnet/minecraft/util/math/BlockPos;ZILjava/lang/String;)V"))
+    private void multiMinePower(BlockPos pos, int sequence, String reason, CallbackInfo ci) {
         if(!wasSneakingWhenStarted && !performingMultiMine) {
             performingMultiMine = true;
             PowerHolderComponent.KEY.get(player).getPowers(MultiMinePower.class).forEach(mmp -> {
                 if(mmp.isBlockStateAffected(justMinedBlockState)) {
                     ItemStack tool = player.getMainHandStack().copy();
                     for(BlockPos bp : mmp.getAffectedBlocks(justMinedBlockState, pos)) {
-                        finishMining(bp, action, reason);
+                        finishMining(bp, sequence, reason);
                         if(!player.getMainHandStack().isItemEqualIgnoreDamage(tool)) {
                             break;
                         }

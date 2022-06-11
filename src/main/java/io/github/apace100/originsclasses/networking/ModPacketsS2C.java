@@ -1,6 +1,13 @@
 package io.github.apace100.originsclasses.networking;
 
-import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PacketSender;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.network.PacketByteBuf;
 
 public class ModPacketsS2C {
 
@@ -8,17 +15,21 @@ public class ModPacketsS2C {
     public static boolean isMultiMining;
 
     public static void register() {
-        ClientSidePacketRegistry.INSTANCE.register(ModPackets.TRADER_TYPE, ((packetContext, packetByteBuf) -> {
-            boolean isWandering = packetByteBuf.readBoolean();
-            packetContext.getTaskQueue().execute(() -> {
-                isWanderingTrader = isWandering;
-            });
+        ClientPlayConnectionEvents.INIT.register(((clientPlayNetworkHandler, minecraftClient) -> {
+            ClientPlayNetworking.registerReceiver(ModPackets.TRADER_TYPE, ModPacketsS2C::receiveTraderType);
+            ClientPlayNetworking.registerReceiver(ModPackets.MULTI_MINING, ModPacketsS2C::receiveMultiMine);
         }));
-        ClientSidePacketRegistry.INSTANCE.register(ModPackets.MULTI_MINING, ((packetContext, packetByteBuf) -> {
-            boolean isMulti = packetByteBuf.readBoolean();
-            packetContext.getTaskQueue().execute(() -> {
-                isMultiMining = isMulti;
-            });
-        }));
+    }
+
+    @Environment(EnvType.CLIENT)
+    private static void receiveTraderType(MinecraftClient minecraftClient, ClientPlayNetworkHandler clientPlayNetworkHandler, PacketByteBuf packetByteBuf, PacketSender packetSender) {
+        boolean isWandering = packetByteBuf.readBoolean();
+        minecraftClient.execute(() -> isWanderingTrader = isWandering);
+    }
+
+    @Environment(EnvType.CLIENT)
+    private static void receiveMultiMine(MinecraftClient minecraftClient, ClientPlayNetworkHandler clientPlayNetworkHandler, PacketByteBuf packetByteBuf, PacketSender packetSender) {
+        boolean isMulti = packetByteBuf.readBoolean();
+        minecraftClient.execute(() -> isMultiMining = isMulti);
     }
 }

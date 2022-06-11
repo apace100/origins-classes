@@ -12,9 +12,9 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.entry.TagEntry;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.math.random.Random;
 
 import java.util.*;
 

@@ -1,0 +1,132 @@
+{
+  "layer.origins-classes.class.name": "Luokka",
+  "layer.origins-classes.class.missing_origin.name": "Puuttuu",
+  "layer.origins-classes.class.missing_origin.description": "Sinulla ei ole luokkaa.",
+
+  "origins-classes.food_bonus": "Ravitsemus: +%s",
+  "origins-classes.mining_speed_bonus": "Louhintanopeus: %s",
+  "origins-classes.longer_potions": "Pidennetty",
+
+  "origin.origins-classes.warrior.name": "Soturi",
+  "origin.origins-classes.warrior.description": "Nämä kunnialliset taistelijat suosivat miekkaa ja kilpeä vihollistensa kukistamiseen.",
+
+  "origin.origins-classes.archer.name": "Jousimies",
+  "origin.origins-classes.archer.description": "Yksi osuma, yksi tappo.",
+
+  "origin.origins-classes.rogue.name": "Kelmi",
+  "origin.origins-classes.rogue.description": "Kelmit tunnetaan yleensä varkaina ja ryöstäjinä, ja he ovat taitavia väijytyksissä ja yllätyshyökkäyksissä.",
+
+  "origin.origins-classes.beastmaster.name": "Petomestari",
+  "origin.origins-classes.beastmaster.description": "Petomestarit ovat luonteeltaan yksinäisiä ihmisiä, jotka viihtyvät mieluummin eläinten seurassa.",
+
+  "origin.origins-classes.blacksmith.name": "Seppä",
+  "origin.origins-classes.blacksmith.description": "Kaikkien kaveri, sepät pystyvät valmistamaan parempia työkaluja, aseita ja haarniskoja.",
+
+  "origin.origins-classes.cleric.name": "Pappi",
+  "origin.origins-classes.cleric.description": "He ovat oppineet ohjailemaan maailmassa olevaa taikaa ja käyttämään sitä hyödykseen.",
+
+  "origin.origins-classes.cook.name": "Kokki",
+  "origin.origins-classes.cook.description": "Kukaan ei voi valmistaa ruokaa paremmin kuin kokki.",
+
+  "origin.origins-classes.farmer.name": "Maanviljelijä",
+  "origin.origins-classes.farmer.description": "Maanviljelijöiden tiedetään tuottaneen kaikille ruokaa niin kauan kuin kukaan muistaa.",
+
+  "origin.origins-classes.merchant.name": "Kauppias",
+  "origin.origins-classes.merchant.description": "Aina etsimässä lisää smaragdeja, kauppiaat ovat taitavia liikemiehiä.",
+
+  "origin.origins-classes.rancher.name": "Karjankasvattaja",
+  "origin.origins-classes.rancher.description": "Karjankasvattajat pystyvät hyödyntämään eläimiä ja keräämään monia hyödyllisiä resursseja.",
+
+  "origin.origins-classes.miner.name": "Kaivosmies",
+  "origin.origins-classes.miner.description": "Kaivosmiehet ovat kaikkein taitavimpia kaivamaan maan aarteita.",
+
+  "origin.origins-classes.lumberjack.name": "Metsuri",
+  "origin.origins-classes.lumberjack.description": "Puiden tulisi olla varuillaan, kun metsurit ovat lähellä.",
+
+  "origin.origins-classes.explorer.name": "Tutkimusmatkailija",
+  "origin.origins-classes.explorer.description": "Tutkimusmatkailijat löytävät tiensä vaikeimmankin maaston läpi ja löytävät kätkettyjä maamerkkejä.",
+
+  "origin.origins-classes.nitwit.name": "Pölkkypää",
+  "origin.origins-classes.nitwit.description": "Pölkkypäät eivät oikein ole hyviä missään.",
+
+  "power.origins-classes.less_shield_slowdown.name": "Kilven hallinta",
+  "power.origins-classes.less_shield_slowdown.description": "Hidastut vähemmän, kun suojaat itseäsi kilvellä.",
+
+  "power.origins-classes.sneaky.name": "Ovela",
+  "power.origins-classes.sneaky.description": "Nimilappusi ei koskaan näy seinien läpi, vaikka et hiipisikään.",
+
+  "power.origins-classes.stealth.name": "Varjoissa",
+  "power.origins-classes.stealth.description": "Kun olet hiipinyt 10 sekuntia, siirryt Stealth-tilaan.",
+
+  "power.origins-classes.stealth_descriptor.name": "Salamyhkäisyys",
+  "power.origins-classes.stealth_descriptor.description": "Kun olet Stealth-tilassa, päästät vähemmän ääniä ja aiheutat enemmän vahinkoa hyökätessäsi vihollisten kimppuun takaapäin. Poistut Stealth-tilasta, kun lopetat hiipimisen tai hyökkäät vihollisen kimppuun.",
+
+  "power.origins-classes.less_bow_slowdown.name": "Ketteryys",
+  "power.origins-classes.less_bow_slowdown.description": "Voit liikkua muita nopeammin jousta vetäessäsi.",
+
+  "power.origins-classes.no_projectile_divergence.name": "Tarkkuus",
+  "power.origins-classes.no_projectile_divergence.description": "Kaikkien ammustesi tarkkuus on parempi.",
+
+  "power.origins-classes.more_attack_damage.name": "Aseosaaminen",
+  "power.origins-classes.more_attack_damage.description": "Pystyt käyttämään jokaista asetta parhaalla mahdollisella tavalla, joten aiheutat hieman enemmän vahinkoa.",
+
+  "power.origins-classes.tamed_animal_boost.name": "Eläinten ystävä",
+  "power.origins-classes.tamed_animal_boost.description": "Kesyttämäsi eläimet saavat pysyvän parannuksen elinvoimaansa ja voimakkuuteensa.",
+
+  "power.origins-classes.tamed_potion_diffusal.name": "Tehokas empatia",
+  "power.origins-classes.tamed_potion_diffusal.description": "Myös lähelläsi olevat kesytetyt eläimet saavat taikajuomavaikutuksia, kun juot taikajuomaa.",
+
+  "power.origins-classes.more_smoker_xp.name": "Savustus",
+  "power.origins-classes.more_smoker_xp.description": "Saat enemmän kokemuspisteitä ruoan paistamisesta savustimessa.",
+
+  "power.origins-classes.better_crafted_food.name": "Hyvät ateriat",
+  "power.origins-classes.better_crafted_food.description": "Itse valmistamasi ruoka on täyttävämpää.",
+
+  "power.origins-classes.longer_potions.name": "Pidennetyt taikajuomat",
+  "power.origins-classes.longer_potions.description": "Viimeisenä vaiheena taikajuoman valmistuksessa voit kaksinkertaistaa taikajuoman keston kattilasta saatavalla vedellä.",
+
+  "power.origins-classes.better_enchanting.name": "Lumouksen mestaruus",
+  "power.origins-classes.better_enchanting.description": "Voit valmistaa parempia lumouksia lumouspöydässä.",
+
+  "power.origins-classes.quality_equipment.name": "Laadukkaat varusteet",
+  "power.origins-classes.quality_equipment.description": "Luomasi varusteet saavat pieniä parannuksia.",
+
+  "power.origins-classes.efficient_repairs.name": "Tehokkaat korjaukset",
+  "power.origins-classes.efficient_repairs.description": "Varusteiden korjaaminen alasimessa vaatii vähemmän materiaaleja. Korjaaminen yhdistämällä varusteita korjaa enemmän kestävyyttä.",
+
+  "power.origins-classes.more_crop_drops.name": "Runsas sato",
+  "power.origins-classes.more_crop_drops.description": "Kun korjaat satoa, on mahdollista, että saat kaksinkertaisen tuoton.",
+
+  "power.origins-classes.better_bone_meal.name": "Lannoitustekniikat",
+  "power.origins-classes.better_bone_meal.description": "Luujauhe on kokeneissa käsissäsi kaksi kertaa tehokkaampaa, kun sitä käytetään kasveihin.",
+
+  "power.origins-classes.twin_breeding.name": "Kaksossynnytykset",
+  "power.origins-classes.twin_breeding.description": "Parittamillasi eläimillä on mahdollisuus saada kaksi poikasta.",
+
+  "power.origins-classes.more_animal_loot.name": "Keräily",
+  "power.origins-classes.more_animal_loot.description": "Voit joskus saada lisää materiaaleja tappaessasi eläimiä.",
+
+  "power.origins-classes.trade_availability.name": "Varastojen täydennys",
+  "power.origins-classes.trade_availability.description": "Kyläläisiltä, joiden kanssa käyt kauppaa, eivät koskaan lopu resurssit.",
+
+  "power.origins-classes.rare_wandering_loot.name": "Karisma",
+  "power.origins-classes.rare_wandering_loot.description": "Voit suostutella kulkukauppiaita tarjoamaan sinulle joitain harvinaisempia esineitään.",
+
+  "power.origins-classes.no_sprint_exhaustion.name": "Hyväkuntoinen",
+  "power.origins-classes.no_sprint_exhaustion.description": "Juokseminen ei uuvuta sinua.",
+
+  "power.origins-classes.explorer_kit.name": "Tutkimuspakkaus",
+  "power.origins-classes.explorer_kit.description": "Pelin alussa saat kompassin, kellon ja yhdeksän tyhjää karttaa.",
+
+  "power.origins-classes.no_mining_exhaustion.name": "Kokenut kaivaja",
+  "power.origins-classes.no_mining_exhaustion.description": "Kuutioiden rikkominen ei uuvuta sinua.",
+
+  "power.origins-classes.more_stone_break_speed.name": "Louhinnan asiantuntija",
+  "power.origins-classes.more_stone_break_speed.description": "Louhit kiviainesta nopeammin kuin muut.",
+
+  "power.origins-classes.tree_felling.name": "Puu kaatuu!",
+  "power.origins-classes.tree_felling.description": "Kaadat kokonaisia puita kerralla, ellet hiivi.",
+
+  "power.origins-classes.more_planks_from_logs.name": "Puuntyöstö",
+  "power.origins-classes.more_planks_from_logs.description": "Saat kaksi puulankkua lisää yhdestä halosta."
+}

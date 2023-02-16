@@ -1,11 +1,12 @@
 package io.github.apace100.originsclasses;
 
-import io.github.apace100.originsclasses.condition.ClassesBlockConditions;
+import io.github.apace100.apoli.util.NamespaceAlias;
 import io.github.apace100.originsclasses.effect.StealthEffect;
 import io.github.apace100.originsclasses.power.ClassesPowerFactories;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class OriginsClasses implements ModInitializer {
 
@@ -16,8 +17,8 @@ public class OriginsClasses implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		NamespaceAlias.addAlias(MODID, "apoli");
 		ClassesPowerFactories.register();
-		ClassesBlockConditions.register();
-		Registry.register(Registry.STATUS_EFFECT, new Identifier(MODID, "stealth"), StealthEffect.INSTANCE);
+		Registry.register(Registries.STATUS_EFFECT, new Identifier(MODID, "stealth"), StealthEffect.INSTANCE);
 	}
 }

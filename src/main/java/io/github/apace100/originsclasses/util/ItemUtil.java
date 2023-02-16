@@ -11,9 +11,9 @@ import net.minecraft.loot.entry.CombinedEntry;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.entry.TagEntry;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.util.math.random.Random;
 
 import java.util.*;
@@ -70,7 +70,7 @@ public class ItemUtil {
                 if(entry instanceof ItemEntry) {
                     OBTAINABLE.add(((ItemEntryAccessor)entry).getItem());
                 } else if(entry instanceof TagEntry) {
-                    OBTAINABLE.addAll(TagUtil.getAllEntries(Registry.ITEM, ((TagEntryAccessor)entry).getName()));
+                    OBTAINABLE.addAll(TagUtil.getAllEntries(Registries.ITEM, ((TagEntryAccessor)entry).getName()));
                 } else if(entry instanceof CombinedEntry) {
                     entryQueue.addAll(Arrays.asList(((CombinedEntryAccessor)entry).getChildren()));
                 }

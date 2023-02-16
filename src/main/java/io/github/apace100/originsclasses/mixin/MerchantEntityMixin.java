@@ -13,7 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOfferList;
 import net.minecraft.world.World;
@@ -84,7 +84,7 @@ public abstract class MerchantEntityMixin extends PassiveEntity {
     private TradeOfferList buildAdditionalOffers() {
         TradeOfferList list = new TradeOfferList();
         Random random = getRandom();
-        Set<Item> excludedItems = TagUtil.getAllEntries(Registry.ITEM, ClassesTags.MERCHANT_BLACKLIST);
+        Set<Item> excludedItems = TagUtil.getAllEntries(Registries.ITEM, ClassesTags.MERCHANT_BLACKLIST);
         list.add(new TradeOffer(
             new ItemStack(Items.EMERALD, random.nextInt(12) + 6),
             ItemUtil.createMerchantItemStack(ItemUtil.getRandomObtainableItem(

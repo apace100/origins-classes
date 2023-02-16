@@ -63,7 +63,7 @@ public abstract class ServerPlayerInteractionManagerMixin implements SneakingSta
                     ItemStack tool = player.getMainHandStack().copy();
                     for(BlockPos bp : mmp.getAffectedBlocks(justMinedBlockState, pos)) {
                         finishMining(bp, sequence, reason);
-                        if(!player.getMainHandStack().isItemEqualIgnoreDamage(tool)) {
+                        if(!ItemStack.areItemsEqual(player.getMainHandStack(), tool)) {
                             break;
                         }
                     }

@@ -88,7 +88,7 @@ public abstract class MerchantEntityMixin extends PassiveEntity {
         list.add(new TradeOffer(
             new ItemStack(Items.EMERALD, random.nextInt(12) + 6),
             ItemUtil.createMerchantItemStack(ItemUtil.getRandomObtainableItem(
-                this.world.getServer(),
+                this.getWorld().getServer(),
                 random,
                 excludedItems), random),
             1,
@@ -96,13 +96,13 @@ public abstract class MerchantEntityMixin extends PassiveEntity {
             0.05F)
         );
         Item desiredItem = ItemUtil.getRandomObtainableItem(
-            this.world.getServer(),
+            this.getWorld().getServer(),
             random,
             excludedItems);
         list.add(new TradeOffer(
             new ItemStack(desiredItem, 1 + random.nextInt(Math.min(16, desiredItem.getMaxCount()))),
             ItemUtil.createMerchantItemStack(ItemUtil.getRandomObtainableItem(
-                this.world.getServer(),
+                this.getWorld().getServer(),
                 random,
                 excludedItems), random),
             1,

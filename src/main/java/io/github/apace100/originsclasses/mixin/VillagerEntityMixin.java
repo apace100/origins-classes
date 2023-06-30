@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class VillagerEntityMixin {
     @Inject(method = "beginTradeWith", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/VillagerEntity;sendOffers(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/text/Text;I)V", shift = At.Shift.AFTER))
     private void sendTraderType(PlayerEntity customer, CallbackInfo ci) {
-        if(customer.world.isClient) {
+        if(customer.getWorld().isClient) {
             return;
         }
         PacketByteBuf data = new PacketByteBuf(Unpooled.buffer());

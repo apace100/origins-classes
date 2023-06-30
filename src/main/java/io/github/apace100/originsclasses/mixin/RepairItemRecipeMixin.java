@@ -3,7 +3,10 @@ package io.github.apace100.originsclasses.mixin;
 import io.github.apace100.originsclasses.power.ClassPowerTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.CraftingInventory;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.RecipeInputInventory;
 import net.minecraft.recipe.RepairItemRecipe;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.CraftingScreenHandler;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.screen.ScreenHandler;
@@ -14,8 +17,8 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 @Mixin(RepairItemRecipe.class)
 public class RepairItemRecipeMixin {
 
-    @ModifyConstant(method = "craft", constant = @Constant(intValue = 5, ordinal = 0))
-    private int doubleRepairDurabilityBonus(int original, CraftingInventory inventory) {
+    @ModifyConstant(method = "craft(Lnet/minecraft/inventory/RecipeInputInventory;Lnet/minecraft/registry/DynamicRegistryManager;)Lnet/minecraft/item/ItemStack;", constant = @Constant(intValue = 5, ordinal = 0))
+    private int doubleRepairDurabilityBonus(int original, RecipeInputInventory inventory, DynamicRegistryManager dynamicRegistryManager) {
         ScreenHandler handler = ((CraftingInventoryAccessor)inventory).getHandler();
         PlayerEntity player = null;
         if(handler instanceof CraftingScreenHandler) {

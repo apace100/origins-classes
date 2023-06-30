@@ -5,6 +5,7 @@ import io.github.apace100.originsclasses.mixin.*;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.loot.LootDataType;
 import net.minecraft.loot.LootManager;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.CombinedEntry;
@@ -55,10 +56,10 @@ public class ItemUtil {
         }
 
         LootManager manager = server.getLootManager();
-        Set<Identifier> lootTables = manager.getTableIds();
+        Collection<Identifier> lootTables = manager.getIds(LootDataType.LOOT_TABLES);
         LootTableAccessor table;
         for(Identifier id : lootTables) {
-            table = (LootTableAccessor)manager.getTable(id);
+            table = (LootTableAccessor)manager.getElement(LootDataType.LOOT_TABLES, id);
             LootPool[] pools = table.getPools();
             Queue<LootPoolEntry> entryQueue = new LinkedList<>();
             for (LootPool pool : pools) {

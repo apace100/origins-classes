@@ -57,7 +57,7 @@ public class ClassesPowerFactories {
                                             continue;
                                         }
                                         newPos.set(pos.getX() + dx, pos.getY() + dy, pos.getZ() + dz);
-                                        BlockState state = pl.world.getBlockState(newPos);
+                                        BlockState state = pl.getWorld().getBlockState(newPos);
                                         if(state.isOf(bs.getBlock()) && !affected.contains(newPos)) {
                                             BlockPos savedNewPos = newPos.toImmutable();
                                             affected.add(savedNewPos);

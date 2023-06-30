@@ -19,7 +19,7 @@ public class WanderingTraderEntityMixin {
 
     @Inject(method = "interactMob", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/WanderingTraderEntity;sendOffers(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/text/Text;I)V", shift = At.Shift.AFTER))
     private void sendTraderType(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        if(player.world.isClient) {
+        if(player.getWorld().isClient) {
             return;
         }
         PacketByteBuf data = new PacketByteBuf(Unpooled.buffer());

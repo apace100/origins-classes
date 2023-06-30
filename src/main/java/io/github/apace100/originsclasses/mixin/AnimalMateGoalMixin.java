@@ -23,7 +23,7 @@ public class AnimalMateGoalMixin {
     private void produceAdditionalBaby(CallbackInfo ci) {
         if(ClassPowerTypes.TWIN_BREEDING.isActive(this.animal.getLovingPlayer())) {
             if(new Random().nextInt(5) == 0) {
-                animal.breed((ServerWorld)animal.world, this.mate);
+                animal.breed((ServerWorld)animal.getWorld(), this.mate);
             }
         }
     }

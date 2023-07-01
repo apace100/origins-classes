@@ -2,12 +2,12 @@
   "type": "origins:modify_break_speed",
   "modifier": {
     "name": "More stone break speed",
-    "value": 0.5,
+    "value": 0.45,
     "operation": "multiply_base"
   },
   "block_condition": {
-    "type": "origins-classes:material",
-    "material": "stone"
+    "type": "apoli:in_tag",
+    "tag": "minecraft:mineable/pickaxe"
   },
   "condition": {
     "type": "origins:using_effective_tool"

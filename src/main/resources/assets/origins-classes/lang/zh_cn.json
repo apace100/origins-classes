@@ -1,131 +1,132 @@
-
 {
-  "layer.origins-classes.class": "职业",
+  "layer.origins-classes.class.name": "职业",
+  "layer.origins-classes.class.missing_origin.name": "缺少",
+  "layer.origins-classes.class.missing_origin.description": "你未拥有职业。",
 
-  "origins-classes.food_bonus": "营养: +%s",
-  "origins-classes.mining_speed_bonus": "挖掘速度: %s",
-  "origins-classes.longer_potions": "药效加长",
+  "origins-classes.food_bonus": "营养：+%s",
+  "origins-classes.mining_speed_bonus": "挖掘速度：%s",
+  "origins-classes.longer_potions": "扩展",
 
   "origin.origins-classes.warrior.name": "战士",
-  "origin.origins-classes.warrior.description": "可敬的战士们更乐意以剑与盾的对决与对手一决胜负。",
+  "origin.origins-classes.warrior.description": "这些受人爱戴的战士擅长使用剑和盾牌来攻击敌人。",
 
-  "origin.origins-classes.archer.name": "弓手",
-  "origin.origins-classes.archer.description": "一发入魂。",
+  "origin.origins-classes.archer.name": "弓箭手",
+  "origin.origins-classes.archer.description": "一弓毙命。",
 
-  "origin.origins-classes.rogue.name": "侠盗",
-  "origin.origins-classes.rogue.description": "以小偷和强盗的身份广为人知，侠盗擅长埋伏与偷袭。",
+  "origin.origins-classes.rogue.name": "流氓",
+  "origin.origins-classes.rogue.description": "众所周知，流氓一般指的是小偷和强盗，它们擅长使用伏击和隐身来战斗。",
 
   "origin.origins-classes.beastmaster.name": "驯兽师",
-  "origin.origins-classes.beastmaster.description": "天性孤独的驯兽师们更愿意与动物们作伴。",
+  "origin.origins-classes.beastmaster.description": "驯兽师喜欢独来独往，喜欢与动物为友。",
 
   "origin.origins-classes.blacksmith.name": "铁匠",
-  "origin.origins-classes.blacksmith.description": "铁匠师傅谁不爱呢？铁匠铸就的武器，工具和盔甲毕竟一流。",
+  "origin.origins-classes.blacksmith.description": "铁匠是所有人最好的朋友，擅长使用工具来制作更好的武器和盔甲。",
 
-  "origin.origins-classes.cleric.name": "牧师",
-  "origin.origins-classes.cleric.description": "牧师明白怎么将世界的魔法融会贯通并为己所用。",
+  "origin.origins-classes.cleric.name": "神父",
+  "origin.origins-classes.cleric.description": "神父擅长使用在世界上已经存在的魔法，并将这些魔法转换成自己的能力。",
 
   "origin.origins-classes.cook.name": "厨师",
-  "origin.origins-classes.cook.description": "还有谁更懂厨艺呢？",
+  "origin.origins-classes.cook.description": "没有人比厨师更能为其他人烹饪食物。",
 
-  "origin.origins-classes.farmer.name": "农民",
-  "origin.origins-classes.farmer.description": "常为大家带来温饱——抽点时间惦记一下他们吧。",
+  "origin.origins-classes.farmer.name": "农夫",
+  "origin.origins-classes.farmer.description": "农夫擅长从耕地中为其他人耕种作物并提供食物。",
 
   "origin.origins-classes.merchant.name": "商人",
-  "origin.origins-classes.merchant.description": "哪怕一颗绿宝石也不会放过！——商人们可是贸易的行家。",
+  "origin.origins-classes.merchant.description": "商人擅长交易，所以商人也一直在寻找更多的绿宝石。",
 
-  "origin.origins-classes.rancher.name": "牧民",
-  "origin.origins-classes.rancher.description": "牧民们更擅长撷取动物资源。",
+  "origin.origins-classes.rancher.name": "牧场主",
+  "origin.origins-classes.rancher.description": "牧场主擅长在动物身上收集许多有用的资源。",
 
   "origin.origins-classes.miner.name": "矿工",
-  "origin.origins-classes.miner.description": "矿工们精于采集大地的矿藏。",
+  "origin.origins-classes.miner.description": "矿工擅长从各种方块中挖掘宝藏。",
 
   "origin.origins-classes.lumberjack.name": "伐木工",
-  "origin.origins-classes.lumberjack.description": "伐木工出没的时候，就是树木要小心的时候。",
+  "origin.origins-classes.lumberjack.description": "当伐木工出现在森林中时，树木将会为之颤抖。",
 
   "origin.origins-classes.explorer.name": "探险家",
-  "origin.origins-classes.explorer.description": "探险家们在险境中之穿梭可谓得心应手，擅长发现隐藏的地点。",
+  "origin.origins-classes.explorer.description": "探险家可以在困难的地形重穿梭自如，可以发现那些更隐蔽的位置。",
 
-  "origin.origins-classes.nitwit.name": "无用之人",
-  "origin.origins-classes.nitwit.description": "平庸的同义词。",
+  "origin.origins-classes.nitwit.name": "失业者",
+  "origin.origins-classes.nitwit.description": "失业者没有任何的特殊能力。",
 
-  "power.origins-classes.less_shield_slowdown.name": "持盾有术",
-  "power.origins-classes.less_shield_slowdown.description": "使用盾牌防御自己时的减速惩罚更少。",
+  "power.origins-classes.less_shield_slowdown.name": "双持盾牌",
+  "power.origins-classes.less_shield_slowdown.description": "当使用盾牌时，你的移动速度不会降低。",
 
-  "power.origins-classes.sneaky.name": "悄声",
-  "power.origins-classes.sneaky.description": "你的名字标签不会在墙的后面显示，哪怕不潜行也是。",
+  "power.origins-classes.sneaky.name": "鬼步",
+  "power.origins-classes.sneaky.description": "即使不按住潜行键，你的名称铭牌也不会被隔墙的人看见。",
 
-  "power.origins-classes.stealth.name": "隐匿",
-  "power.origins-classes.stealth.description": "按住潜行按键十秒后会进入匿踪模式。",
+  "power.origins-classes.stealth.name": "阴影",
+  "power.origins-classes.stealth.description": "在按住潜行键10秒后，你将会进入隐身状态。",
 
-  "power.origins-classes.stealth_descriptor.name": "匿踪模式",
-  "power.origins-classes.stealth_descriptor.description": "进入匿踪模式以后，发出声响减少，且背后偷袭造成伤害更高。松开潜行键或者攻击敌人后将解除匿踪模式。",
+  "power.origins-classes.stealth_descriptor.name": "隐刺",
+  "power.origins-classes.stealth_descriptor.description": "当在隐身状态下攻击敌人后背时会增加造成的伤害并且攻击声音会降低，当你停止隐身或者攻击生物时，隐身状态就会消失。",
 
-  "power.origins-classes.less_bow_slowdown.name": "迅捷",
-  "power.origins-classes.less_bow_slowdown.description": "你拉弓时的移动速度相比他人更快。",
+  "power.origins-classes.less_bow_slowdown.name": "灵敏",
+  "power.origins-classes.less_bow_slowdown.description": "拉弓时，你的拉弓速度会比别人更快。",
 
   "power.origins-classes.no_projectile_divergence.name": "精准",
-  "power.origins-classes.no_projectile_divergence.description": "你所发射的所有弹射物都更精准。",
+  "power.origins-classes.no_projectile_divergence.description": "你发射的所有弹射物可以更加精准。",
 
-  "power.origins-classes.more_attack_damage.name": "武器学者",
-  "power.origins-classes.more_attack_damage.description": "能够发挥各种武器的最大效能，因此你攻击的伤害会更多一点。",
+  "power.origins-classes.more_attack_damage.name": "武器潜能",
+  "power.origins-classes.more_attack_damage.description": "你可以充分发挥每种武器的潜能，所以可以造成更多的伤害。",
 
-  "power.origins-classes.tamed_animal_boost.name": "动物朋友",
-  "power.origins-classes.tamed_animal_boost.description": "你驯养的动物会获得永久的生命值和力量加成。",
+  "power.origins-classes.tamed_animal_boost.name": "动物之友",
+  "power.origins-classes.tamed_animal_boost.description": "你驯服的动物将会获得永久性地生命值上限和攻击力加成",
 
-  "power.origins-classes.tamed_potion_diffusal.name": "共感",
-  "power.origins-classes.tamed_potion_diffusal.description": "你驯养的动物在你身边的时候，会同你一起接收饮用获得的药效。",
+  "power.origins-classes.tamed_potion_diffusal.name": "弥漫效果",
+  "power.origins-classes.tamed_potion_diffusal.description": "当你饮用药水时，你附近的动物也会获得相同的药水效果。",
 
-  "power.origins-classes.more_smoker_xp.name": "熏制能手",
-  "power.origins-classes.more_smoker_xp.description": "使用烟熏炉烤制食品时获得的经验更多。",
+  "power.origins-classes.more_smoker_xp.name": "烟熏",
+  "power.origins-classes.more_smoker_xp.description": "当你通过烟熏炉烹饪食物时，你可以获得更多的经验。",
 
-  "power.origins-classes.better_crafted_food.name": "优质食品",
-  "power.origins-classes.better_crafted_food.description": "你制作的食品所回复的饱食度更多。",
+  "power.origins-classes.better_crafted_food.name": "美味膳食",
+  "power.origins-classes.better_crafted_food.description": "你制作的食物将会回复更多的饱食度。",
 
-  "power.origins-classes.longer_potions.name": "长效药水",
-  "power.origins-classes.longer_potions.description": "使用炼药锅中的水作为炼药的最后一道工序以加长药水时效。",
+  "power.origins-classes.longer_potions.name": "药水拓展",
+  "power.origins-classes.longer_potions.description": "作为酿造药水的最终步骤，你酿造的药水可以获得双倍的持续时间。",
 
   "power.origins-classes.better_enchanting.name": "附魔大师",
-  "power.origins-classes.better_enchanting.description": "附魔台提供的附魔更加优质。",
+  "power.origins-classes.better_enchanting.description": "当你使用附魔台时，你可以更轻松地获得更好的附魔。",
 
   "power.origins-classes.quality_equipment.name": "优质装备",
-  "power.origins-classes.quality_equipment.description": "你制作的装备额外提供一点点加成。",
+  "power.origins-classes.quality_equipment.description": "你制作的装备可以给予少量的属性加成。",
 
-  "power.origins-classes.efficient_repairs.name": "高效修理",
-  "power.origins-classes.efficient_repairs.description": "铁砧修理装备所花费的材料更少；通过合成修理装备恢复的耐久更多。",
+  "power.origins-classes.efficient_repairs.name": "高效维修",
+  "power.origins-classes.efficient_repairs.description": "你可以在铁砧中使用更少的材料来修复，同时在工作台中使用相同装备合成时也可以恢复更多的耐久。",
 
-  "power.origins-classes.more_crop_drops.name": "今年收成好啊——",
-  "power.origins-classes.more_crop_drops.description": "收获农作物时有几率收成加倍。",
+  "power.origins-classes.more_crop_drops.name": "丰收",
+  "power.origins-classes.more_crop_drops.description": "当你收获作物时，有概率可以获得双倍的作物产出。",
 
-  "power.origins-classes.better_bone_meal.name": "施肥有方",
-  "power.origins-classes.better_bone_meal.description": "骨粉在你熟练的手中对农作物与植物的效果加倍。",
+  "power.origins-classes.better_bone_meal.name": "施肥技术",
+  "power.origins-classes.better_bone_meal.description": "当骨粉在有技术的人员手中时，可以让骨粉获得双倍的催生效果。",
 
-  "power.origins-classes.twin_breeding.name": "双喜临门",
-  "power.origins-classes.twin_breeding.description": "你喂养繁殖的动物有几率生下双胞胎。",
+  "power.origins-classes.twin_breeding.name": "双胞胎",
+  "power.origins-classes.twin_breeding.description": "你繁殖的动物有概率会产下两个幼体动物。",
 
-  "power.origins-classes.more_animal_loot.name": "搜刮能手",
-  "power.origins-classes.more_animal_loot.description": "你杀死的动物偶尔产出更掉落。",
+  "power.origins-classes.more_animal_loot.name": "高效屠杀",
+  "power.origins-classes.more_animal_loot.description": "在屠杀动物后，你有概率可以从动物身上获得更多的战利品。",
 
-  "power.origins-classes.trade_availability.name": "补货",
-  "power.origins-classes.trade_availability.description": "村民与你交易永远不会断货。",
+  "power.origins-classes.trade_availability.name": "无限交易",
+  "power.origins-classes.trade_availability.description": "与你交易的村民将会获得无限的资源。",
 
-  "power.origins-classes.rare_wandering_loot.name": "魅力十足",
-  "power.origins-classes.rare_wandering_loot.description": "你可以说服流浪商人出售一些更稀有的货物。",
+  "power.origins-classes.rare_wandering_loot.name": "魅力",
+  "power.origins-classes.rare_wandering_loot.description": "每次遇见流浪商人时你都有概率可以让流浪商人出售一些更稀有的物品。",
 
-  "power.origins-classes.no_sprint_exhaustion.name": "强身健体",
-  "power.origins-classes.no_sprint_exhaustion.description": "疾跑不会让你感到疲惫。",
+  "power.origins-classes.no_sprint_exhaustion.name": "健体",
+  "power.origins-classes.no_sprint_exhaustion.description": "疾跑将不会消耗饱食度。",
 
-  "power.origins-classes.explorer_kit.name": "探险装备",
-  "power.origins-classes.explorer_kit.description": "游戏开始的时候你会获得一个指南针，一个钟，和9个空地图。",
+  "power.origins-classes.explorer_kit.name": "探险者装备",
+  "power.origins-classes.explorer_kit.description": "当开始游戏时，你将会获得1个指南针、1个时钟和9张空地图。",
 
-  "power.origins-classes.no_mining_exhaustion.name": "采石有技巧",
-  "power.origins-classes.no_mining_exhaustion.description": "采掘方块不会让你感到疲惫。",
+  "power.origins-classes.no_mining_exhaustion.name": "身经百战",
+  "power.origins-classes.no_mining_exhaustion.description": "当你破坏方块时将不会损失饱食度。",
 
-  "power.origins-classes.more_stone_break_speed.name": "挖矿有秘方",
-  "power.origins-classes.more_stone_break_speed.description": "你开采矿石的速度相比他人更快。",
+  "power.origins-classes.more_stone_break_speed.name": "采矿专家",
+  "power.origins-classes.more_stone_break_speed.description": "你镐子的挖掘速度将会比其他人更快。",
 
-  "power.origins-classes.tree_felling.name": "你给我倒下来——！",
-  "power.origins-classes.tree_felling.description": "你可以立刻砍下整棵树木，除非你潜行。",
+  "power.origins-classes.tree_felling.name": "木材！",
+  "power.origins-classes.tree_felling.description": "当你没有按住潜行键时，你将可以一次将树木全部砍伐。",
 
-  "power.origins-classes.more_planks_from_logs.name": "木工",
-  "power.origins-classes.more_planks_from_logs.description": "合成木板的时候你会多获得两个木板。"
+  "power.origins-classes.more_planks_from_logs.name": "伐木",
+  "power.origins-classes.more_planks_from_logs.description": "当你合成木板时，你将可以额外从每个原木上获得2块木板。"
 }

@@ -65,7 +65,7 @@ public class CraftingScreenHandlerMixin {
             }
         }
         int baseValue = itemStack.getCount();
-        int newValue = (int) PowerHolderComponent.modify(player, CraftAmountPower.class, baseValue, (p -> p.doesApply(itemStack)));
+        int newValue = (int) PowerHolderComponent.modify(player, CraftAmountPower.class, baseValue, (p -> p.doesApply(world, itemStack)));
         if(newValue != baseValue) {
             itemStack.setCount(newValue < 0 ? 0 : Math.min(newValue, itemStack.getMaxCount()));
         }

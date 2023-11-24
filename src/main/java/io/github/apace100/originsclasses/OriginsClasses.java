@@ -1,6 +1,6 @@
 package io.github.apace100.originsclasses;
 
-import io.github.apace100.apoli.util.NamespaceAlias;
+import io.github.apace100.apoli.util.IdentifierAlias;
 import io.github.apace100.originsclasses.effect.StealthEffect;
 import io.github.apace100.originsclasses.power.ClassesPowerFactories;
 import net.fabricmc.api.ModInitializer;
@@ -17,7 +17,7 @@ public class OriginsClasses implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		NamespaceAlias.addAlias(MODID, "apoli");
+		IdentifierAlias.addNamespaceAlias(MODID, "apoli");
 		ClassesPowerFactories.register();
 		Registry.register(Registries.STATUS_EFFECT, new Identifier(MODID, "stealth"), StealthEffect.INSTANCE);
 	}

@@ -60,20 +60,20 @@ public class ItemUtil {
         LootTableAccessor table;
         for(Identifier id : lootTables) {
             table = (LootTableAccessor)manager.getElement(LootDataType.LOOT_TABLES, id);
-            LootPool[] pools = table.getPools();
+            List<LootPool> pools = table.getPools();
             Queue<LootPoolEntry> entryQueue = new LinkedList<>();
             for (LootPool pool : pools) {
-                LootPoolEntry[] entries = ((LootPoolAccessor) pool).getEntries();
-                entryQueue.addAll(Arrays.asList(entries));
+                List<LootPoolEntry> entries = ((LootPoolAccessor) pool).getEntries();
+                entryQueue.addAll(entries);
             }
             while(!entryQueue.isEmpty()) {
                 LootPoolEntry entry = entryQueue.remove();
                 if(entry instanceof ItemEntry) {
-                    OBTAINABLE.add(((ItemEntryAccessor)entry).getItem());
+                    OBTAINABLE.add(((ItemEntryAccessor)entry).getItem().value());
                 } else if(entry instanceof TagEntry) {
                     OBTAINABLE.addAll(TagUtil.getAllEntries(Registries.ITEM, ((TagEntryAccessor)entry).getName()));
                 } else if(entry instanceof CombinedEntry) {
-                    entryQueue.addAll(Arrays.asList(((CombinedEntryAccessor)entry).getChildren()));
+                    entryQueue.addAll(((CombinedEntryAccessor)entry).getChildren());
                 }
             }
         }
